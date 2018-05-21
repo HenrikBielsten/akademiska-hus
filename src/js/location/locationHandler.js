@@ -1,3 +1,5 @@
+// const map = document.querySelector('.map');
+
 document.getElementById("locationCord").innerHTML = localStorage.getItem("longitude");
 
 var latint = parseFloat(localStorage.getItem("latitude").replace(',','.').replace(' ',''))
@@ -12,7 +14,6 @@ fetch('http://localhost:8888/api/buildings')
     longitude: lngint
   }
 
-
   const ok = Object.entries(data.data).map(([inst, key]) => key)
   .filter(thing => (thing.latitude > userCoords.latitude - .5 &&
      thing.latitude < userCoords.latitude + .5) &&
@@ -22,4 +23,6 @@ fetch('http://localhost:8888/api/buildings')
 console.log(ok[0]['building_name']);
 
 document.getElementById("campus").innerHTML = ok[0]['building_name'];
+
+
 })
