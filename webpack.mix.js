@@ -12,11 +12,14 @@ let mix = require('laravel-mix');
  */
 
  mix.js('src/js/app.js', 'js/app.js')
+    .js('src/js/location/locationHandler.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([
       'src/js/takePictureView/geolocation.js',
-        'src/js/takePictureView/addFiles.js',
-        'src/js/takePictureView/urgentModal.js',
-        'src/js/takePictureView/continue.js'
+      'src/js/takePictureView/addFiles.js',
+      'src/js/takePictureView/urgentModal.js',
+      'src/js/takePictureView/continue.js'
     ], 'js/app.js');
+
+mix.disableSuccessNotifications();

@@ -18,6 +18,8 @@ class CreateBuildingsTable extends Migration
             $table->string('city');
             $table->string('building_name');
             $table->string('building_address');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->timestamps();
         });
     }

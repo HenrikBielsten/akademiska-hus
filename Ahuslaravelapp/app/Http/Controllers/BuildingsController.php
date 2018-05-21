@@ -38,7 +38,8 @@ class BuildingsController extends Controller
         $building->city = $request->input('city');
         $building->building_name = $request->input('building_name');
         $building->building_address = $request->input('building_address');
-        $building->geolocation = $request->input('geolocation');
+        $building->latitude = $request->input('latitude');
+        $building->longitude = $request->input('longitude');
 
 
         if ($building->save()) {

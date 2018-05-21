@@ -21,7 +21,8 @@ class Buildings extends JsonResource
             'city' => $this->city,
             'building_name' => $this->building_name,
             'building_address' => $this->building_address,
-            'geolocation' => $this->geolocation
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude
         ];
     }
 }

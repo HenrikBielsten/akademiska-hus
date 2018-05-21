@@ -1,4 +1,3 @@
-const container = document.querySelector('.container');
 const urgentIconSmall = document.querySelector('.urgentIconSmall');
 const urgentModalContainer = document.querySelector('.urgentModalContainer');
 const urgentModal = document.querySelector('.urgentModal');
