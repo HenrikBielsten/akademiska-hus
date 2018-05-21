@@ -10,6 +10,7 @@ let mix = require('laravel-mix');
  | file for your application, as well as bundling up your JS files.
  |
  */
+mix.disableSuccessNotifications();
 
  mix.js('src/js/app.js', 'js/app.js')
     .js('src/js/location/locationHandler.js', 'js/')
@@ -21,5 +22,3 @@ let mix = require('laravel-mix');
       'src/js/takePictureView/urgentModal.js',
       'src/js/takePictureView/continue.js'
     ], 'js/app.js');
-
-mix.disableSuccessNotifications();
