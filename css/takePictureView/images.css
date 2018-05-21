@@ -1,0 +1,16 @@
+.imagePreview {
+  width: 100vw;
+  height: 56vh;
+  background: #e6e6e6;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.selectedImage {
+  width: 100vw;
+  height: 56vh;
+  flex-shrink: 0;
+  object-fit: cover;
+}

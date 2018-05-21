@@ -1,0 +1,36 @@
+.modalOverlay {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  display: flex;
+  background: black;
+  opacity: 0;
+  transition: all .1s ease-in-out;
+}
+
+.urgentModalContainer {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  display: flex;
+}
+
+.urgentModal {
+  height: 70vh;
+  width: 80vw;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  transform: translateX(-900px);
+  transition: all .2s ease-in-out;
+}

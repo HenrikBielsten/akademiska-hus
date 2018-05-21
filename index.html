@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Akademiska Hus - Felanmälning</title>
+  <link rel="stylesheet" href="css/takePictureView/takePictureView.css">
+  <link rel="stylesheet" href="css/takePictureView/continue.css">
+  <link rel="stylesheet" href="css/takePictureView/images.css">
+  <link rel="stylesheet" href="css/takePictureView/selectFiles.css">
+  <link rel="stylesheet" href="css/takePictureView/tooMany.css">
+  <link rel="stylesheet" href="css/takePictureView/menu.css">
+  <link rel="stylesheet" href="css/takePictureView/urgentModal.css">
+
+</head>
+<body>
+
+  <div id="out"></div>
+
+<div class="container">
+  <div class="imagePreview">
+    <p class="startText">
+      Hej och välkommen till felanmälningsappen! Här kan du göra felanmälningar kopplade till ditt campusområde. Din felanmälan kommer att behandlas av behörig personal och förhoppningsvis kan vi lösa problemet snabbare än du hinner reagera.
+    <br>
+    <br>
+    Börja med att ta en bild, eller flera, som visar felet så tydligt som möjligt. Klicka sedan på "fortsätt".</p>
+  </div>
+
+  <div class="bottomContianer">
+
+    <div class="urgentContainer">
+      <svg class="urgentIconSmall" width="38" height="40" viewBox="0 0 38 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <path d="M1.33 28.67h29.34L16 3.33 1.33 28.67zm16-4h-2.66V22h2.66v2.67zm0-5.34h-2.66V14h2.66v5.33z" id="a"/>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+          <g transform="translate(2 -3)">
+            <mask id="b" fill="#fff">
+              <use xlink:href="#a"/>
+            </mask>
+            <g mask="url(#b)" fill="#E3004A">
+              <path d="M0 0h32v32H0z"/>
+            </g>
+          </g>
+          <text font-family="Arial-BoldMT, Arial" font-size="13" font-weight="bold" letter-spacing=".27" fill="#141414" transform="translate(-3 -3)">
+            <tspan x="3.05" y="42">Akut</tspan> <tspan x="33.01" y="42">?</tspan>
+          </text>
+        </g>
+      </svg>
+
+      <svg class="hamburger" width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <path d="M4 24h24v-2.67H4V24zm0-6.67h24v-2.66H4v2.66zM4 8v2.67h24V8H4z" id="c"/>
+        </defs>
+        <g transform="translate(-4 -8)" fill="none" fill-rule="evenodd">
+          <mask id="d" fill="#fff">
+            <use xlink:href="#c"/>
+          </mask>
+          <g mask="url(#d)" fill="#000" fill-opacity=".87">
+            <path d="M0 0h32v32H0z"/>
+          </g>
+        </g>
+      </svg>
+    </div> <!-- End urgentContainer -->
+
+    <div class="inputContainer">
+
+      <input type="file" class="fileElem" multiple style="display:none" onchange="handleFiles(this.files)">
+
+      <svg onclick="geoFindMe()" class="fileSelect" width="94" height="94" viewBox="0 0 94 94" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <circle stroke="#D5D5D5" stroke-width="3" cx="47" cy="47" r="45.5"/>
+          <circle fill="#00A388" cx="47" cy="47" r="41"/>
+        </g>
+      </svg>
+
+    </div> <!-- End inputContianer -->
+
+    <div class="continueContainer">
+      <a class="continueButton" href="location.html">
+        <svg class="continueIcon" width="92" height="22" viewBox="0 0 92 22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <path id="e" d="M16 5.33l-1.88 1.88 7.44 7.46H5.33v2.66h16.23l-7.44 7.46L16 26.67 26.67 16z"/>
+          </defs>
+          <g fill="none" fill-rule="evenodd">
+            <g transform="translate(65 -5)">
+              <mask id="f" fill="#fff">
+                <use xlink:href="#e"/>
+              </mask>
+              <g mask="url(#f)" fill="#00A388">
+                <path d="M0 0h32v32H0z"/>
+              </g>
+            </g>
+            <text font-family="Arial-BoldMT, Arial" font-size="16" font-weight="bold" fill="#000" transform="translate(-11 -5)">
+              <tspan x="10.22" y="22">Fortsätt</tspan>
+            </text>
+          </g>
+        </svg>
+      </a>
+    </div> <!-- End continueContainer -->
+
+  </div> <!-- End bottomContianer -->
+
+  <div class="modalOverlay">
+
+  </div>
+  <div class="urgentModalContainer">
+    <div class="urgentModal">
+
+      <div class="urgentHeader">
+
+      </div>
+
+      <div class="urgentIcons">
+
+      </div>
+
+      <div class="urgentText">
+
+      </div>
+
+      <div class="urgentChooseArea">
+
+      </div>
+    </div> <!-- End urgentModal -->
+  </div> <!-- End urgentModalContianer -->
+
+</div> <!-- End contianer -->
+
+<script src="javascript/takePictureView/geolocation.js"></script>
+<script src="javascript/takePictureView/addFiles.js"></script>
+<script src="javascript/takePictureView/urgentModal.js"></script>
+<script src="javascript/takePictureView/continue.js"></script>
+
+</body>
+</html>

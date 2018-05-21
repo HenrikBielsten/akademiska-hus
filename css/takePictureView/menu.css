@@ -1,0 +1,20 @@
+.urgentContainer {
+  width: inherit;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2vh;
+}
+
+.urgentIconSmall {
+  height: inherit;
+  width: 5vh;
+  margin-left: 3vw;
+}
+
+.hamburger {
+  height: inherit;
+  width: 5vh;
+  margin-right: 3vw;
+}
