@@ -1,0 +1,29 @@
+{
+  "name": "akademiska-hus",
+  "version": "1.0.0",
+  "description": "akademiska hus web app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenrikBielsten/akademiska-hus.git"
+  },
+  "keywords": [
+    "akademiska",
+    "hus"
+  ],
+  "author": "Filip Petersson & Henrik Bielsten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenrikBielsten/akademiska-hus/issues"
+  },
+  "homepage": "https://github.com/HenrikBielsten/akademiska-hus#readme",
+  "devDependencies": {
+    "laravel-mix": "^2.1.11"
+  }
+}
