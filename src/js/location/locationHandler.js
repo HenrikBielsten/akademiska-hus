@@ -1,3 +1,5 @@
+// const map = document.querySelector('.map');
+
 document.getElementById("locationCord").innerHTML = localStorage.getItem("longitude");
 
 var latint = parseFloat(localStorage.getItem("latitude").replace(',','.').replace(' ',''))

@@ -17,12 +17,13 @@ function geoFindMe() {
 
     console.log('Your location is: ' + myLocation);
 
-    // output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-    //
     // var img = new Image();
-    // img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+    // img.src = "https://maps.googleapis.com/maps/api/js?=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+    //
+    // img.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCYHmuFEeJ7F_eeR15nQv5gftsYLixa4b0&callback=initMap";
     //
     // output.appendChild(img);
+
   }
 
   function error() {
