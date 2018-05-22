@@ -344,8 +344,8 @@
           align-items: center;
   background: white;
   overflow: hidden;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(-900px);
+          transform: translateX(-900px);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
