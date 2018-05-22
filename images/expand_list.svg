@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>expand_list_button</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="7.91666667 17 12.0833333 12 7.91666667 7"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Akut_overlay" transform="translate(-269.000000, -521.000000)">
+            <g transform="translate(24.000000, 102.000000)" id="Valj_omrade">
+                <g transform="translate(48.000000, 412.000000)">
+                    <g id="icon/navigation/arrow_right_24px" transform="translate(200.000000, 12.000000) rotate(-360.000000) translate(-200.000000, -12.000000) translate(190.000000, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g fill-rule="nonzero"></g>
+                        <g id="✱-/-Color-/-Icons-/-Primary-or-Secondary" mask="url(#mask-2)" fill="#00A388" fill-rule="evenodd">
+                            <g id="✱-/-Color-/-Primary-/-Main">
+                                <g id="✱-/-Color-/-Primary-/-400">
+                                    <rect id="Rectangle-13" x="0" y="0" width="20" height="24"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

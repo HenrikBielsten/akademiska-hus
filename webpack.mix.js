@@ -22,3 +22,7 @@ mix.disableSuccessNotifications();
       'src/js/takePictureView/urgentModal.js',
       'src/js/takePictureView/continue.js'
     ], 'js/app.js');
+
+    mix.options({
+      processCssUrls: false // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
+    });

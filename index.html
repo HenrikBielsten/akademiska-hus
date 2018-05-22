@@ -9,6 +9,10 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -122,17 +126,33 @@
       <p>Välj ditt område från listan nedan för att anmäla akuta fel. För icke akuta fel i våra byggnader ber vi er att använda vår vanliga felanmälan.</p>
       </div>
 
-      <div class="urgentChooseArea">
+      <div class="urgentChooseArea bottom">
         <div class="wrapper">
           <div class="content">
               <ul>
-                <a href="#"><li>Lorem ipsum dolor</li></a>
-                <a href="#"><li>Consectetur adipisicing</li></a>
-                <a href="#"><li>Reprehenderit</li></a>
-                <a href="#"><li>Commodo consequat</li></a>
+                <a href="#"><li><span class="campus_name">Alnarp</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">046 - 31 13 10</span></li></a>
+                <a href="#"><li><span class="campus_name">Borås (G4S)</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Chalmers</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Frescati</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Göteborgs Universitet</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Karlstad</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Karolinska Institutet</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Kristianstad</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">KTH/Östermalm	</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Linköping	</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Luleå (Securitas)		</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Lund</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Malmö</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Medicinareberget</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Norrköping</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Skövde</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Umeå</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Uppsala</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+                <a href="#"><li><span class="campus_name">Örebro (Securitas)</span><span class="campus_telephone"><img src="./images/telephone_icon_small.svg" alt="">0768760785</span></li></a>
+
               </ul>
           </div>
-              <div class="parent">Välj område</div>
+              <div class="parent">Välj campus <span class="expand-icon"><img src="./images/expand_list.svg" alt=""></span></div>
         </div>
       </div>
     </div> <!-- End urgentModal -->
@@ -149,6 +169,9 @@
 </div>
 
 </body>
+<script>
+$( ".content li:even" ).css( "background-color", "rgba(223, 223, 223, 0.18)");
+</script>
 
 <script>
 function initMap() {

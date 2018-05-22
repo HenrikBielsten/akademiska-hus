@@ -25,15 +25,16 @@
   padding: 5%;
   box-sizing: border-box;
   height: 70vh;
-  width: 80vw;
+  width: 87vw;
   border-radius: 15px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   background: white;
-  transform: translateX(-900px);
-  // transform: translateX(0);
+  overflow: hidden;
+  // transform: translateX(-900px);
+  transform: translateX(0);
   transition: all 0.2s ease-in-out;
 
   .urgentHeader {
@@ -53,6 +54,7 @@
       width: 24px;
       height: 24px;
       pointer-events: visible;
+      z-index: 999999;
     }
 
     .urgentIcons {
@@ -90,16 +92,23 @@
     }
   }
 
+  .urgentChooseArea.top {
+    top: 0;
+  }
+
   .urgentChooseArea {
     position: absolute;
-    bottom: 0;
     height: 7%;
     margin-bottom: 3%;
     pointer-events: visible;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
 
     .wrapper {
       display: inline-block;
-      width: 180px;
+      width: 100%;
       height: 100%;
       position: relative;
     }
@@ -111,57 +120,69 @@
       cursor: pointer;
       line-height: 30px;
       height: 30px;
-      border-radius: 5px;
-      background: #F9F9F9;
-      border: 1px solid #AAA;
-      border-bottom: 1px solid #777;
-      color: #282D31;
-      z-index: 2;
+      border-bottom: 1px solid $primary;
+      background-color: #fff;
+      color: #000;
+      z-index: 999;
       position: relative;
       -webkit-transition: border-radius 0.1s linear, background 0.1s linear, z-index 0s linear;
       -webkit-transition-delay: 0s;
-      text-align: center;
-    }
+      text-align: left;
+      font-size: 18px;
 
-    .content:hover ~ .parent,
-    .parent:hover {
-      background: #fff;
-      -webkit-transition-delay: 0s, 0s, 0s;
-    }
+      .expand-icon {
+        float: right;
+        margin-right: 10%;
+        width: 12px;
+        height: 12px;
 
-    .content:hover ~ .parent {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      z-index: 0;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
     }
-
+    // .content:hover ~ .parent,
+    // .parent:hover {
+    //   background: #fff;
+    //   -webkit-transition-delay: 0s, 0s, 0s;
+    // }
+    // .content:hover ~ .parent {
+    //   border-bottom-left-radius: 0;
+    //   border-bottom-right-radius: 0;
+    //   z-index: 999;
+    // }
     .content {
       position: absolute;
       top: 0;
       display: block;
       z-index: 1;
-      height: 0;
-      width: 180px;
+      max-height: 0;
+      width: 100%;
+      overflow: hidden;
       padding-top: 30px;
-      -webkit-transition: height 0.2s ease;
-      -webkit-transition-delay: 1.4s;
-      border: 1px solid #777;
-      border-radius: 5px;
-      box-shadow: 0 1px 2px rgba(0,0,0,.4);
+      transition: max-height 0.4s linear;
+      // -webkit-transition: height 0.4s linear;
     }
-
-    .wrapper:active .content {
-      height: 123px;
+    // .wrapper:active .content {
+    //   height: auto;
+    //   z-index: 3;
+    //   // -webkit-transition-delay: 0.2s;
+    //   max-height: 65vh;
+    //   overflow: scroll;
+    // }
+    .content.active {
       z-index: 3;
-      -webkit-transition-delay: 0.2s;
+      max-height: 65vh;
+      overflow: scroll;
     }
-
-    .content:hover {
-      height: 123px;
-      z-index: 3;
-      -webkit-transition-delay: 0s;
-    }
-
+    // .content:hover {
+    //   height: auto;
+    //   z-index: 3;
+    //   -webkit-transition-delay: 0s;
+    //   max-height: 65vh;
+    //   overflow: scroll;
+    // }
     .content ul {
       background: #fff;
       margin: 0;
@@ -170,6 +191,7 @@
       height: 100%;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
     }
 
     .content ul a {
@@ -177,8 +199,7 @@
     }
 
     .content li:hover {
-      background: #eee;
-      color: #333;
+      background-color: rgba(223,223,223,1) !important;
     }
 
     .content li {
@@ -186,10 +207,26 @@
       text-align: left;
       color: #888;
       font-size: 14px;
-      line-height: 30px;
-      height: 30px;
+      height: 8vh;
       padding-left: 10px;
-      border-top: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .campus_name {
+        font-size: 16px;
+      }
+
+      .campus_telephone {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        margin-top: 1%;
+
+        img {
+          margin-right: 4%;
+        }
+      }
     }
 
     .content li:last-of-type {
