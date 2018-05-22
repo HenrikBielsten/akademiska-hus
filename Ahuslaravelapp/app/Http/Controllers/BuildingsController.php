@@ -35,7 +35,7 @@ class BuildingsController extends Controller
         $building = $request->IsMethod('put') ? Building::findOrFail($request->building_id) : new Building;
 
         $building->id = $request->input('building_id');
-        $building->city = $request->input('city');
+        $building->campus = $request->input('campus');
         $building->building_name = $request->input('building_name');
         $building->building_address = $request->input('building_address');
         $building->latitude = $request->input('latitude');

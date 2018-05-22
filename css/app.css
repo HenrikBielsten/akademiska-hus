@@ -1,3 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif !important;
+}
+
 .bottomMenu {
   width: inherit;
   height: 8vh;
@@ -303,8 +308,8 @@
   display: flex;
   background: black;
   opacity: 0;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .urgentModalContainer {
@@ -324,6 +329,9 @@
 }
 
 .urgentModal {
+  padding: 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 70vh;
   width: 80vw;
   border-radius: 15px;
@@ -336,15 +344,193 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background: white;
   -webkit-transform: translateX(-900px);
           transform: translateX(-900px);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.urgentModal .urgentHeader {
+  width: 100%;
+  height: 30%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.urgentModal .urgentHeader .closeUrgentModalIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  pointer-events: visible;
+}
+
+.urgentModal .urgentHeader .urgentIcons {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.urgentModal .urgentHeader .urgentIcons .largeWarningIcon {
+  width: 100%;
+  height: 60%;
+}
+
+.urgentModal .urgentHeader .urgentIcons .smallIcons {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10%;
+}
+
+.urgentModal .urgentHeader .urgentIcons .smallIcons img {
+  height: 100%;
+  width: 25%;
+}
+
+.urgentModal .urgentText p {
+  font-size: 16px;
+}
+
+.urgentModal .urgentChooseArea {
+  position: absolute;
+  bottom: 0;
+  height: 7%;
+  margin-bottom: 3%;
+  pointer-events: visible;
+}
+
+.urgentModal .urgentChooseArea .wrapper {
+  display: inline-block;
+  width: 180px;
+  height: 100%;
+  position: relative;
+}
+
+.urgentModal .urgentChooseArea .parent {
+  height: 100%;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  line-height: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: #F9F9F9;
+  border: 1px solid #AAA;
+  border-bottom: 1px solid #777;
+  color: #282D31;
+  z-index: 2;
+  position: relative;
+  -webkit-transition: border-radius 0.1s linear, background 0.1s linear, z-index 0s linear;
+  -webkit-transition-delay: 0s;
+  text-align: center;
+}
+
+.urgentModal .urgentChooseArea .content:hover ~ .parent,
+.urgentModal .urgentChooseArea .parent:hover {
+  background: #fff;
+  -webkit-transition-delay: 0s, 0s, 0s;
+}
+
+.urgentModal .urgentChooseArea .content:hover ~ .parent {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  z-index: 0;
+}
+
+.urgentModal .urgentChooseArea .content {
+  position: absolute;
+  top: 0;
+  display: block;
+  z-index: 1;
+  height: 0;
+  width: 180px;
+  padding-top: 30px;
+  -webkit-transition: height 0.2s ease;
+  -webkit-transition-delay: 1.4s;
+  border: 1px solid #777;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.urgentModal .urgentChooseArea .wrapper:active .content {
+  height: 123px;
+  z-index: 3;
+  -webkit-transition-delay: 0.2s;
+}
+
+.urgentModal .urgentChooseArea .content:hover {
+  height: 123px;
+  z-index: 3;
+  -webkit-transition-delay: 0s;
+}
+
+.urgentModal .urgentChooseArea .content ul {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.urgentModal .urgentChooseArea .content ul a {
+  text-decoration: none;
+}
+
+.urgentModal .urgentChooseArea .content li:hover {
+  background: #eee;
+  color: #333;
+}
+
+.urgentModal .urgentChooseArea .content li {
+  list-style: none;
+  text-align: left;
+  color: #888;
+  font-size: 14px;
+  line-height: 30px;
+  height: 30px;
+  padding-left: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.urgentModal .urgentChooseArea .content li:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 

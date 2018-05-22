@@ -18,7 +18,7 @@ class Buildings extends JsonResource
 
         return [
             'id' => $this->id,
-            'city' => $this->city,
+            'campus' => $this->campus,
             'building_name' => $this->building_name,
             'building_address' => $this->building_address,
             'latitude' => $this->latitude,

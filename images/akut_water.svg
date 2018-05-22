@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="24px" viewBox="0 0 16 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Akut_overlay" transform="translate(-145.000000, -187.000000)" fill="#0094BB" fill-rule="nonzero">
+            <g id="Group-4" transform="translate(24.000000, 102.000000)">
+                <g id="Group-2-Copy" transform="translate(121.000000, 85.000000)">
+                    <path d="M8.00071944,0 L1.41141724,11.4613978 L0.903307034,12.331236 L0.87911131,12.3743239 C0.312048537,13.4969903 0.0112094549,14.7355747 0,15.9937127 C0.0103623394,20.4143064 3.58764196,23.994073 8.00071944,23.9999946 C10.7538652,24.0032055 13.3147168,22.5863504 14.7780056,20.2502918 C16.2412944,17.9142333 16.4008585,14.9880969 15.2002916,12.5062808 L8.00071944,0 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Akademiska Hus - Felanmälning</title>
   <link rel="stylesheet" href="css/app.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -100,19 +105,35 @@
     <div class="urgentModal">
 
       <div class="urgentHeader">
+        <img class="closeUrgentModalIcon" src="./images/x.svg" alt="">
 
+        <div class="urgentIcons">
+          <img class="largeWarningIcon" src="./images/akut_warning_largest.svg" alt="">
+          <div class="smallIcons">
+          <img class="waterIcon" src="./images/akut_water.svg" alt="">
+          <img class="electricityIcon" src="./images/akut_electricity.svg" alt="">
+          <img class="pestIcon" src="./images/akut_pest.svg" alt="">
+          </div>
+        </div>
       </div>
-
-      <div class="urgentIcons">
-
-      </div>
-
       <div class="urgentText">
-
+      <p>Akuta fel handla om stopp i avlopp med stigande vatten som följd, vatten som strömmar från en ledning eller ett strömavbrott.</p>
+      <p>Det kan också handla om fel som medför risk för vatten- eller personskada.</p>
+      <p>Välj ditt område från listan nedan för att anmäla akuta fel. För icke akuta fel i våra byggnader ber vi er att använda vår vanliga felanmälan.</p>
       </div>
 
       <div class="urgentChooseArea">
-
+        <div class="wrapper">
+          <div class="content">
+              <ul>
+                <a href="#"><li>Lorem ipsum dolor</li></a>
+                <a href="#"><li>Consectetur adipisicing</li></a>
+                <a href="#"><li>Reprehenderit</li></a>
+                <a href="#"><li>Commodo consequat</li></a>
+              </ul>
+          </div>
+              <div class="parent">Välj område</div>
+        </div>
       </div>
     </div> <!-- End urgentModal -->
   </div> <!-- End urgentModalContianer -->
