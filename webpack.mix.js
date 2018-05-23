@@ -14,6 +14,7 @@ mix.disableSuccessNotifications();
 
  mix.js('src/js/app.js', 'js/app.js')
     .js('src/js/location/locationHandler.js', 'js/')
+    .js('src/js/location/map.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([
@@ -22,3 +23,7 @@ mix.disableSuccessNotifications();
       'src/js/takePictureView/urgentModal.js',
       'src/js/takePictureView/continue.js'
     ], 'js/app.js');
+
+    mix.options({
+      processCssUrls: false // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
+    });

@@ -79,12 +79,11 @@ module.exports = __webpack_require__(4);
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-// const map = document.querySelector('.map');
-
-document.getElementById("locationCord").innerHTML = localStorage.getItem("longitude");
-
 var latint = parseFloat(localStorage.getItem("latitude").replace(',', '.').replace(' ', ''));
 var lngint = parseFloat(localStorage.getItem("longitude").replace(',', '.').replace(' ', ''));
+
+var buildingLat = null;
+var buildingLng = null;
 
 fetch('http://localhost:8888/api/buildings').then(function (response) {
   return response.json();
@@ -130,6 +129,13 @@ fetch('http://localhost:8888/api/buildings').then(function (response) {
 
   document.getElementById("campus").innerHTML = returnedBuilding['campus'];
   document.getElementById("building").innerHTML = returnedBuilding['building_name'];
+  document.querySelector(".popupAdress").innerHTML = returnedBuilding['building_address'];
+  document.querySelector(".popupCampus").innerHTML = 'Campus: ' + returnedBuilding['campus'] + ', ';
+  document.querySelector(".popupBuilding").innerHTML = 'Byggnad: ' + returnedBuilding['building_name'];
+
+  buildingLat = returnedBuilding['latitude'];
+  buildingLng = returnedBuilding['longitude'];
+  console.log(buildingLat);
 });
 
 /***/ })

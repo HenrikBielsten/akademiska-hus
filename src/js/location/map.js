@@ -1,70 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Akademiska Hus - Felanmälning</title>
-  <link rel="stylesheet" href="css/app.css">
-
-</head>
-<body>
-
-  <div class="map">
-
-  </div>
-
-  <div class="popupContent">
-    <div class="popupAdress">
-
-    </div>
-    <div class="popupCampus">
-
-    </div>
-    <div class="popupBuilding">
-
-    </div>
-  </div>
-
-  <div class="choicesContaier">
-
-    <div class="locationText-1">
-      Befinner du dig på <b class="campus"><span id="campus"></span> i byggnad <b class="building" id="building"></b>?
-    </div>
-    <br>
-    <br>
-    <div class="locationText-2">
-      Stämmer det inte kan du välja campus och byggnad i listan nedan.
-    </div>
-
-    <div class="chooseCampus">
-
-    </div>
-
-    <div class="chooseBuilding">
-
-    </div>
-
-    <div class="forwardsBackwardsContainer">
-
-    </div>
-
-  </div>
-
-  <div class="bottomMenu">
-
-  </div>
-
-</body>
-
-
-<script>
-
-function initMap() {
+(function initMap() {
 
   definePopupClass();
   // Styles a map in night mode.
   var map = new google.maps.Map(document.querySelector('.map'), {
-    center: {lat: 57.70536269999999, lng: 11.936251799999999},
+    center: {lat: 23.124124, lng: 32.123123},
     zoom: 17,
     styles: [
       {
@@ -213,7 +152,7 @@ function initMap() {
     new google.maps.LatLng(57.70536269999999, 11.936251799999999),
     document.querySelector('.popupContent'));
     popup.setMap(map);
-  }
+  })();
 
   function definePopupClass() {
     /**
@@ -288,15 +227,3 @@ function initMap() {
       });
     };
   }
-
-  </script>
-
-
-  <script src="js/map.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYHmuFEeJ7F_eeR15nQv5gftsYLixa4b0&callback=initMap"
-  async defer></script>
-  <script src="js/locationHandler.js"></script>
-  
-
-
-  </html>

@@ -1,9 +1,8 @@
-// const map = document.querySelector('.map');
-
-document.getElementById("locationCord").innerHTML = localStorage.getItem("longitude");
-
 var latint = parseFloat(localStorage.getItem("latitude").replace(',','.').replace(' ',''))
 var lngint = parseFloat(localStorage.getItem("longitude").replace(',','.').replace(' ',''))
+
+var buildingLat = null;
+var buildingLng = null;
 
 fetch('http://localhost:8888/api/buildings')
 .then(response => response.json())
@@ -39,8 +38,6 @@ fetch('http://localhost:8888/api/buildings')
 
 }
 
-
-
 // Converts numeric degrees to radians
 function toRad(Value)
 {
@@ -51,4 +48,12 @@ console.log(returnedBuilding['building_name']);
 
 document.getElementById("campus").innerHTML = returnedBuilding['campus'];
 document.getElementById("building").innerHTML = returnedBuilding['building_name'];
+document.querySelector(".popupAdress").innerHTML = returnedBuilding['building_address'];
+document.querySelector(".popupCampus").innerHTML = 'Campus: ' + returnedBuilding['campus'] + ', ';
+document.querySelector(".popupBuilding").innerHTML = 'Byggnad: ' + returnedBuilding['building_name'];
+
+buildingLat = returnedBuilding['latitude'];
+buildingLng = returnedBuilding['longitude'];
+console.log(buildingLat);
+
 })
