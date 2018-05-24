@@ -8,10 +8,14 @@ var fileSelect = document.querySelector(".fileSelect"),
     startText = document.querySelector(".startText"),
     continueButton = document.querySelector(".continueButton"),
     continueIcon = document.querySelector(".continueIcon");
+    info = document.querySelector(".info");
+    instructions = document.querySelector(".instructions");
 
+var filesArray = [];
 
-
-const filesArray = [];
+// if (localStorage.getItem('images')) {
+//   filesArray = localStorage.getItem('images');
+// }
 
 if (filesArray.length < 4) {
   fileSelect.addEventListener("click", (e) => {
@@ -40,7 +44,8 @@ function handleFiles(files) {
     return;
   } else {
 
-    startText.innerHTML = "";
+    info.style.display = 'none';
+    instructions.style.display = 'none';
 
     for (var i = 0; i < files.length; i++) {
 
@@ -55,6 +60,8 @@ function handleFiles(files) {
       filesArray.push(img);
 
       console.log(filesArray);
+
+      localStorage.setItem('images', filesArray);
 
       if (filesArray.length >= 1) {
         continueButton.style.pointerEvents = 'all';

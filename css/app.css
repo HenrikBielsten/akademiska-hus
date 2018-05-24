@@ -277,22 +277,92 @@ textarea {
 .bottomMenu {
   width: inherit;
   height: 8vh;
-  background: green;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 5vw 0 5vw;
+}
+
+.bottomMenu .hamburgerIcon {
+  height: 3vh;
 }
 
 .choicesContaier {
   width: inherit;
   height: 42vh;
-  background: blue;
+  background: #FFFFFF;
 }
 
-.locationText-1, .locationText-2 {
+.choicesContaier .locationText-1, .choicesContaier .locationText-2 {
   width: inherit;
-  height: 9vh;
+  height: 8vh;
   padding: 2vh 5vw 0 5vw;
   color: #1E1E1E;
   font-family: Arial;
-  font-size: 46px;
+  font-size: 17px;
+  line-height: 19px;
+}
+
+.choicesContaier .locationText-2 {
+  padding: 0 5vw 0 5vw;
+}
+
+.choicesContaier .chooseCampus {
+  height: 8vh;
+  width: inherit;
+  background: yellow;
+}
+
+.choicesContaier .chooseBuilding {
+  height: 8vh;
+  width: inherit;
+  background: purple;
+}
+
+.choicesContaier .forwardsBackwardsContainer {
+  width: inherit;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.choicesContaier .forwardsBackwardsContainer .leftArrowContainer, .choicesContaier .forwardsBackwardsContainer .rightArrowContainer {
+  height: inherit;
+  width: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #141414;
+  font-family: Arial;
+  font-size: 12px;
+  letter-spacing: 0.08px;
+  line-height: 12px;
+  text-decoration: none;
 }
 
 .container {
@@ -317,7 +387,91 @@ textarea {
 .map {
   width: inherit;
   height: 50vh;
-  background: red;
+}
+
+.popupCampus, .popupBuilding {
+  color: #FBFBFB;
+  font-family: Arial;
+  font-size: 18px;
+  letter-spacing: 0.16px;
+  line-height: 21px;
+  margin-left: 5vw;
+}
+
+.popupBuilding {
+  margin-bottom: 5vh;
+}
+
+.popupAdress {
+  color: #FBFBFB;
+  font-family: Arial;
+  font-size: 13px;
+  letter-spacing: 1.38px;
+  line-height: 14px;
+  margin: 2vh 0 0 5vw;
+}
+
+/* The location pointed to by the popup tip. */
+.popup-tip-anchor {
+  height: 0;
+  position: absolute;
+  /* The max width of the info window. */
+  width: 200px;
+}
+
+/* The bubble is anchored above the tip. */
+.popup-bubble-anchor {
+  position: absolute;
+  width: 100%;
+  bottom: 8px;
+  left: 0;
+}
+
+/* Draw the tip. */
+.popup-bubble-anchor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Center the tip horizontally. */
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
+  width: 0;
+  height: 0;
+  /* The tip is 8px high, and 12px wide. */
+  border-left: 5vw solid transparent;
+  border-right: 5vw solid transparent;
+  border-top: 4vh solid transparent;
+}
+
+/* The popup bubble itself. */
+.popup-bubble-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-51%, -80%);
+          transform: translate(-51%, -80%);
+  /* Style the info window. */
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-family: sans-serif;
+  overflow-y: auto;
+  height: 18vh;
+  width: 83vw;
+  background-image: url("../images/popup_map.svg");
+  background-size: cover;
 }
 
 .continueContainer {
@@ -329,12 +483,13 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1vh;
 }
 
-.continueIcon {
+.continueContainer .continueIcon {
   height: 4vh;
   width: 20vh;
   opacity: 0.5;
@@ -350,15 +505,19 @@ textarea {
           align-items: center;
 }
 
-.continueButton {
+.continueContainer .continueButton {
   pointer-events: none;
   text-decoration: none;
+}
+
+.continueContainer img {
+  margin-left: 4vw;
 }
 
 .imagePreview {
   width: 100vw;
   height: 56vh;
-  background: #e6e6e6;
+  background: #E9EFE9;
   overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -468,61 +627,6 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-/* The location pointed to by the popup tip. */
-.popup-tip-anchor {
-  height: 0;
-  position: absolute;
-  /* The max width of the info window. */
-  width: 200px;
-}
-
-/* The bubble is anchored above the tip. */
-.popup-bubble-anchor {
-  position: absolute;
-  width: 100%;
-  bottom: 8px;
-  left: 0;
-}
-
-/* Draw the tip. */
-.popup-bubble-anchor::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* Center the tip horizontally. */
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
-  width: 0;
-  height: 0;
-  /* The tip is 8px high, and 12px wide. */
-  border-left: 5vw solid transparent;
-  border-right: 5vw solid transparent;
-  border-top: 4vh solid #00A388;
-}
-
-/* The popup bubble itself. */
-.popup-bubble-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
-  /* Style the info window. */
-  background-color: white;
-  padding: 5px;
-  border-radius: 15px;
-  font-family: sans-serif;
-  overflow-y: auto;
-  height: 18vh;
-  width: 82vw;
-  border: 2px solid #FFFFFF;
-  background-color: #00A388;
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29);
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29);
 }
 
 .tooManyContainer {
@@ -839,6 +943,7 @@ textarea {
   border-bottom-right-radius: 5px;
 }
 
+<<<<<<< HEAD
 .image_cover_container {
   width: 100%;
   height: 100%;
@@ -874,10 +979,19 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+=======
+.info {
+  height: inherit;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+>>>>>>> afef0a54e8b71f0d4aaa2dd3de6910d1ee0d00f1
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+<<<<<<< HEAD
   right: 375px;
 }
 
@@ -899,6 +1013,18 @@ textarea {
   position: absolute;
   bottom: 0;
   background-color: #fff;
+=======
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2vh 0 2vh;
+}
+
+.info .infoIcon {
+  height: 14vh;
+>>>>>>> afef0a54e8b71f0d4aaa2dd3de6910d1ee0d00f1
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -908,6 +1034,7 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+<<<<<<< HEAD
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -966,10 +1093,57 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+=======
+}
+
+.info .infoIcon img {
+  height: inherit;
+}
+
+.info .infoH1 {
+  color: #313131;
+  font-family: 'scene';
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+}
+
+.info .infoH2 {
+  color: #1E1E1E;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+}
+
+.info .infoText {
+  color: #1E1E1E;
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.info .infoArrow {
+  height: 7vh;
+}
+
+.info .infoArrow img {
+  height: inherit;
+}
+
+.instructions {
+  height: inherit;
+  width: inherit;
+  display: none;
+>>>>>>> afef0a54e8b71f0d4aaa2dd3de6910d1ee0d00f1
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+<<<<<<< HEAD
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1069,4 +1243,101 @@ textarea {
 
 .image_cover_container .describe-report-container .submit-container .arrow-right {
   margin-right: 4%;
+=======
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3vh 0 3vh;
+}
+
+.instructions .instructionsIcon {
+  height: 14vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.instructions .instructionsIcon img {
+  height: inherit;
+}
+
+.instructions .instructionsH1 {
+  color: #313131;
+  font-family: 'scene';
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+}
+
+.instructions .instructionsList {
+  color: #1E1E1E;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.instructions .instructionsList ol {
+  margin: 0;
+}
+
+.instructions .instructionsList ol li {
+  margin-top: 1vh;
+}
+
+.instructions .instructionsText {
+  color: #1E1E1E;
+  font-family: Arial;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 20px;
+  text-align: center;
+}
+
+.instructions .infoArrow {
+  height: 7vh;
+}
+
+.instructions .infoArrow img {
+  height: inherit;
+}
+
+.hamburgerMenu {
+  height: 44vh;
+  width: inherit;
+  background: #00A388;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: -100vw;
+}
+
+.hamburgerMenu .myErrorReports, .hamburgerMenu .myAccount, .hamburgerMenu .logOut {
+  color: #FFFFFF;
+  font-family: "scene";
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 40px;
+>>>>>>> afef0a54e8b71f0d4aaa2dd3de6910d1ee0d00f1
 }

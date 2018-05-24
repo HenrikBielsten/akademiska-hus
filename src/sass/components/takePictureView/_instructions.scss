@@ -1,0 +1,62 @@
+.instructions {
+  height: inherit;
+  width: inherit;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 3vh 0 3vh;
+
+  .instructionsIcon {
+    height: 14vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: inherit;
+    }
+  }
+
+  .instructionsH1 {
+    color: #313131;
+    font-family: 'scene';
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  .instructionsList {
+    color: #1E1E1E;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+
+    ol {
+      margin: 0;
+
+      li {
+        margin-top: 1vh;
+      }
+    }
+  }
+
+  .instructionsText {
+    color: #1E1E1E;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .infoArrow {
+    height: 7vh;
+
+    img {
+      height: inherit;
+    }
+  }
+}

@@ -19,13 +19,58 @@
   <div id="out"></div>
 
 <div class="container">
+
   <div class="imagePreview">
-    <p class="startText">
-      Hej och välkommen till felanmälningsappen! Här kan du göra felanmälningar kopplade till ditt campusområde. Din felanmälan kommer att behandlas av behörig personal och förhoppningsvis kan vi lösa problemet snabbare än du hinner reagera.
-    <br>
-    <br>
-    Börja med att ta en bild, eller flera, som visar felet så tydligt som möjligt. Klicka sedan på "fortsätt".</p>
-  </div>
+
+    <div class="info">
+
+      <div class="infoIcon">
+        <img src="./images/info.svg" alt="">
+      </div>
+
+      <div class="infoH1">
+        Felanmälan
+      </div>
+
+      <div class="infoH2">
+        Vad kul att du hittade hit!
+      </div>
+
+      <div class="infoText">
+        Tryck på kameraknappen nedan för att påbörja din felanmälan eller tryck på pilen för att veta mer om hur du använder appen.
+      </div>
+
+      <div class="infoArrow">
+        <img src="./images/arrow_green.svg" alt="">
+      </div>
+
+    </div> <!-- end indfo -->
+
+    <div class="instructions">
+
+      <div class="instructionsIcon">
+        <img src="./images/info.svg" alt="">
+      </div>
+
+      <div class="instructionsH1">
+        Instruktion
+      </div>
+
+      <div class="instructionsList">
+        <ol>
+          <li>Knäpp en bild/välj från bibliotek</li>
+          <li>Beskriv ditt ärende</li>
+          <li>Skicka in</li>
+        </ol>
+      </div>
+
+      <div class="instructionsText">
+        För att slippa fylla i dina personuppgifter vid varje tillfälle har du möjlighet att registera dig efter att du skickat in din felanmälan.
+      </div>
+
+    </div>
+
+  </div> <!-- end imagePreview -->
 
   <div class="bottomContianer">
 
@@ -78,6 +123,7 @@
     </div> <!-- End inputContianer -->
 
     <div class="continueContainer">
+      <img src="./images/logo_ahus.svg" alt="">
       <a class="continueButton" href="location.html">
         <svg class="continueIcon" width="92" height="22" viewBox="0 0 92 22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
@@ -99,6 +145,22 @@
         </svg>
       </a>
     </div> <!-- End continueContainer -->
+
+    <div class="hamburgerMenu">
+
+      <div class="myErrorReports">
+        Mina felanmälningar
+      </div>
+
+      <div class="myAccount">
+        Mitt konto
+      </div>
+
+      <div class="logOut">
+        Logga ut
+      </div>
+
+    </div> <!-- End hamburgerMenu -->
 
   </div> <!-- End bottomContianer -->
 
@@ -160,252 +222,10 @@
 
 </div> <!-- End contianer -->
 
-<div class="map" style="height: 50vh; width:100vw; background: black;">
-
-</div>
-
-<div class="popupContent">
-   Hello!
-</div>
-
 </body>
 <script>
 $( ".content li:even" ).css( "background-color", "rgba(223, 223, 223, 0.18)");
 </script>
 
-<script>
-function initMap() {
-
-  definePopupClass();
-        // Styles a map in night mode.
-        var map = new google.maps.Map(document.querySelector('.map'), {
-          center: {lat: 57.70536269999999, lng: 11.936256799999999},
-          zoom: 18,
-          styles: [
-                    {
-                        featureType: "water",
-                        stylers: [
-                            {
-                                saturation: 43
-                            },
-                            {
-                                lightness: -11
-                            },
-                            {
-                                hue: "#0088ff"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "geometry.fill",
-                        stylers: [
-                            {
-                                hue: "#ff0000"
-                            },
-                            {
-                                saturation: -100
-                            },
-                            {
-                                lightness: 99
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "geometry.stroke",
-                        stylers: [
-                            {
-                                color: "#808080"
-                            },
-                            {
-                                lightness: 54
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "landscape.man_made",
-                        elementType: "geometry.fill",
-                        stylers: [
-                            {
-                                color: "#ece2d9"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "poi.park",
-                        elementType: "geometry.fill",
-                        stylers: [
-                            {
-                                color: "#ccdca1"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "labels.text.fill",
-                        stylers: [
-                            {
-                                color: "#767676"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "labels.text.stroke",
-                        stylers: [
-                            {
-                                color: "#ffffff"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "poi",
-                        stylers: [
-                            {
-                                visibility: "on"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "landscape.natural",
-                        elementType: "geometry.fill",
-                        stylers: [
-                            {
-                                visibility: "on"
-                            },
-                            {
-                                color: "#b8cb93"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "poi.park",
-                        stylers: [
-                            {
-                                visibility: "on"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "poi.sports_complex",
-                        stylers: [
-                            {
-                                visibility: "on"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "poi.medical",
-                        stylers: [
-                            {
-                                visibility: "on"
-                            }
-                        ]
-                    },
-                    {
-                        featureType: "poi.business",
-                        stylers: [
-                            {
-                                visibility: "on"
-                            }
-                        ]
-                    }
-                ]
-        });
-
-        setTimeout(function () {
-
-          var marker = new google.maps.Marker({
-            animation: google.maps.Animation.DROP,
-            position: {lat: 57.70536269999999, lng: 11.936256799999999},
-            map: map,
-            title: 'Hello World!'
-          });
-        }, 1000);
-
-        var popup = new Popup(
-          new google.maps.LatLng(57.70536269999999, 11.936251799999999),
-          document.querySelector('.popupContent'));
-          popup.setMap(map);
-      }
-
-      function definePopupClass() {
-        /**
-         * A customized popup on the map.
-         * @param {!google.maps.LatLng} position
-         * @param {!Element} content
-         * @constructor
-         * @extends {google.maps.OverlayView}
-         */
-        Popup = function(position, content) {
-          this.position = position;
-
-          content.classList.add('popup-bubble-content');
-
-          var pixelOffset = document.createElement('div');
-          pixelOffset.classList.add('popup-bubble-anchor');
-          pixelOffset.appendChild(content);
-
-          this.anchor = document.createElement('div');
-          this.anchor.classList.add('popup-tip-anchor');
-          this.anchor.appendChild(pixelOffset);
-
-          // Optionally stop clicks, etc., from bubbling up to the map.
-          this.stopEventPropagation();
-        };
-
-        // NOTE: google.maps.OverlayView is only defined once the Maps API has
-  // loaded. That is why Popup is defined inside initMap().
-  Popup.prototype = Object.create(google.maps.OverlayView.prototype);
-
-  /** Called when the popup is added to the map. */
-  Popup.prototype.onAdd = function() {
-    this.getPanes().floatPane.appendChild(this.anchor);
-  };
-
-  /** Called when the popup is removed from the map. */
-  Popup.prototype.onRemove = function() {
-    if (this.anchor.parentElement) {
-      this.anchor.parentElement.removeChild(this.anchor);
-    }
-  };
-
-  /** Called when the popup needs to draw itself. */
-  Popup.prototype.draw = function() {
-    var divPosition = this.getProjection().fromLatLngToDivPixel(this.position);
-    // Hide the popup when it is far out of view.
-    var display =
-        Math.abs(divPosition.x) < 4000 && Math.abs(divPosition.y) < 4000 ?
-        'block' :
-        'none';
-
-    if (display === 'block') {
-      this.anchor.style.left = divPosition.x + 'px';
-      this.anchor.style.top = divPosition.y + 'px';
-    }
-    if (this.anchor.style.display !== display) {
-      this.anchor.style.display = display;
-    }
-  };
-
-  /** Stops clicks/drags from bubbling up to the map. */
-  Popup.prototype.stopEventPropagation = function() {
-    var anchor = this.anchor;
-    anchor.style.cursor = 'auto';
-
-    ['click', 'dblclick', 'contextmenu', 'wheel', 'mousedown', 'touchstart',
-     'pointerdown']
-        .forEach(function(event) {
-          anchor.addEventListener(event, function(e) {
-            e.stopPropagation();
-          });
-        });
-  };
-      }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYHmuFEeJ7F_eeR15nQv5gftsYLixa4b0&callback=initMap"
-  async defer></script>
   <script src="js/app.js"></script>
 </html>

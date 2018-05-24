@@ -1,3 +1,10 @@
+const infoArrow = document.querySelector('.infoArrow');
+
+infoArrow.addEventListener("click", (e) => {
+  info.style.display = 'none';
+  instructions.style.display = 'flex';
+})
+
 var latitude = "";
 var longitude = "";
 var myLocation = "";
@@ -16,14 +23,6 @@ function geoFindMe() {
     myLocation = latitude + ', ' + longitude;
 
     console.log('Your location is: ' + myLocation);
-
-    // var img = new Image();
-    // img.src = "https://maps.googleapis.com/maps/api/js?=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-    //
-    // img.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCYHmuFEeJ7F_eeR15nQv5gftsYLixa4b0&callback=initMap";
-    //
-    // output.appendChild(img);
-
   }
 
   function error() {
@@ -43,10 +42,14 @@ var fileSelect = document.querySelector(".fileSelect"),
     startText = document.querySelector(".startText"),
     continueButton = document.querySelector(".continueButton"),
     continueIcon = document.querySelector(".continueIcon");
+    info = document.querySelector(".info");
+    instructions = document.querySelector(".instructions");
 
+var filesArray = [];
 
-
-const filesArray = [];
+// if (localStorage.getItem('images')) {
+//   filesArray = localStorage.getItem('images');
+// }
 
 if (filesArray.length < 4) {
   fileSelect.addEventListener("click", (e) => {
@@ -75,7 +78,8 @@ function handleFiles(files) {
     return;
   } else {
 
-    startText.innerHTML = "";
+    info.style.display = 'none';
+    instructions.style.display = 'none';
 
     for (var i = 0; i < files.length; i++) {
 
@@ -90,6 +94,8 @@ function handleFiles(files) {
       filesArray.push(img);
 
       console.log(filesArray);
+
+      localStorage.setItem('images', filesArray);
 
       if (filesArray.length >= 1) {
         continueButton.style.pointerEvents = 'all';
@@ -145,9 +151,15 @@ const locationText2 = document.querySelector('.locationText-2');
 
 
 continueButton.addEventListener("click", (e) => {
-  console.log(filesArray);
-  console.log(myLocation);
 
   localStorage.setItem("latitude",latitude);
   localStorage.setItem("longitude",longitude);
 })
+
+const hamburgerMenu = document.querySelector('.hamburgerMenu');
+const hamburger = document.querySelector('.hamburger');
+
+$(hamburger).click(function() {
+  console.log('click');
+  $(hamburgerMenu).animate({right: '0vw'}, "fast");
+});

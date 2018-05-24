@@ -13,15 +13,19 @@ let mix = require('laravel-mix');
 mix.disableSuccessNotifications();
 
  mix.js('src/js/app.js', 'js/app.js')
+    .js('src/js/location/fetchBuilding.js', 'js/')
     .js('src/js/location/locationHandler.js', 'js/')
     .js('src/js/error/questionmark.js', 'js/')
+    .js('src/js/location/map.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([
+      'src/js/takePictureView/infoArrow.js',
       'src/js/takePictureView/geolocation.js',
       'src/js/takePictureView/addFiles.js',
       'src/js/takePictureView/urgentModal.js',
-      'src/js/takePictureView/continue.js'
+      'src/js/takePictureView/continue.js',
+      'src/js/takePictureView/hamburgerMenu.js'
     ], 'js/app.js');
 
     mix.options({

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -126,30 +126,11 @@ function fetchBuilding() {
 /* 1 */,
 /* 2 */,
 /* 3 */,
-/* 4 */,
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(0);
 
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__ = __webpack_require__(0);
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(function (returnedBuilding) {
-
-    document.getElementById("campus").innerHTML = returnedBuilding['campus'];
-    document.getElementById("building").innerHTML = returnedBuilding['building_name'];
-    document.querySelector(".popupAdress").innerHTML = returnedBuilding['building_address'];
-    document.querySelector(".popupCampus").innerHTML = 'Campus: ' + returnedBuilding['campus'];
-    document.querySelector(".popupBuilding").innerHTML = 'Byggnad: ' + returnedBuilding['building_name'];
-});
 
 /***/ })
 /******/ ]);

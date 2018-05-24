@@ -1,55 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Akademiska Hus - Felanmälning</title>
-    <link rel="stylesheet" href="css/app.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akademiska Hus - Felanmälning</title>
+  <link rel="stylesheet" href="css/app.css">
 
-  </head>
-  <body>
+</head>
+<body>
 
-    <div class="map">
+  <div class="map">
+
+  </div>
+
+  <div class="popupContent">
+    <div class="popupAdress">
+
+    </div>
+    <div class="popupCampus">
+
+    </div>
+    <div class="popupBuilding">
+
+    </div>
+  </div>
+
+  <div class="choicesContaier">
+
+    <div class="locationText-1">
+      Befinner du dig på <b class="campus"><span id="campus"></span></b> i byggnad <b class="building"><span id="building"></span></b>?
+    </div>
+
+    <div class="locationText-2">
+      Stämmer det inte kan du välja campus och byggnad i listan nedan.
+    </div>
+
+    <div class="chooseCampus">
 
     </div>
 
-    <div class="choicesContaier">
-
-      <div class="locationText-1">
-        <p id="locationCord"></p>
-        Befinner du dig på <b class="campus"><span id="campus"></span> i byggnad <b class="building" id="building"></b>?
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="locationText-2">
-        Stämmer det inte kan du välja campus och byggnad i listan nedan.
-      </div>
-
-      <div class="chooseCampus">
-
-      </div>
-
-      <div class="chooseBuilding">
-
-      </div>
-
-      <div class="forwardsBackwardsContainer">
-
-      </div>
+    <div class="chooseBuilding">
 
     </div>
 
-    <div class="bottomMenu">
+    <div class="forwardsBackwardsContainer">
 
-    </div>
+      <a href="index.html" class="leftArrowContainer">
+        <img src="./images/arrow_left_bakat.svg" alt="">
+      </a>
 
-  </body>
+      <a href="#" class="rightArrowContainer">
+        <img src="./images/arrow_right_framat.svg" alt="">
+      </a>
 
-  <script src="js/locationHandler.js"></script>
+    </div> <!-- End forwardsBackwardsContainer -->
 
+  </div> <!-- End chiocesContainer -->
+
+  <div class="bottomMenu">
+    <img src="./images/logo_ahus.svg" alt="">
+    <img class="hamburgerIcon" src="./images/menu_hamburger.svg" alt="">
+  </div>
+
+</body>
+
+<script src="js/fetchBuilding.js"></script>
+<script src="js/locationHandler.js"></script>
+<script src="js/map.js"></script>
 
 </html>
