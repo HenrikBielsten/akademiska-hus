@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akademiska Hus - Felanmälning</title>
+  <link rel="stylesheet" href="css/app.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="image_cover_container">
+  <div class="single-item">
+  <div><img src="https://images.unsplash.com/photo-1519627398411-c86cd6daf9ac?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5cf2e649c693208001bf3f887c9ae736&auto=format&fit=crop&w=932&q=80" alt=""></div>
+  <div><img src="https://images.unsplash.com/photo-1524050586923-77990e57ae14?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2ad179d03dd2f83377a1c524c5d33a06&auto=format&fit=crop&w=934&q=80" alt=""></div>
+  <div><img src="https://images.unsplash.com/photo-1438174025556-e65b76da121a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5723074e8d7cbe4552bb768738150a90&auto=format&fit=crop&w=975&q=80" alt=""></div>
+</div>
+
+<div class="questionmark_popup">
+
+  <img class="xIcon" src="./images/x.svg" alt="">
+  <img class="questionMark_large" src="./images/questionmark_largest.svg" alt="">
+  <p>Genom att jag delar med mig av denna information ger jag mitt samtycke och godkännande till att mina personuppgifter som jag lämnar i min anmälan behandlas av Akademiska Hus för att kommunicera information i ärendet samt hantera och administrera min anmälan.</p>
+  <p>Syftet är att förenkla administrationen kring min anmälan samt att underlätta kommunikation mellan mig och Akademiska Hus.</p>
+  <p>Mina personuppgifter tas bort när personuppgifterna blivit inaktuella eller på annat sätt inte är nödvändiga.</p>
+</div>
+
+<div class="describe-report-container">
+  <img class="collapseIcon" src="./images/collapse_image.svg" alt="">
+  <img class="expandIcon" src="./images/expand_image.svg" alt="">
+  <div class="report-wrapper">
+    <div class="top-section">
+  <h2>Beskriv ditt ärende</h2>
+  <img class="questionmark" src="./images/questionmark_small.svg" alt="">
+  </div>
+  <form class="" action="index.html" method="post">
+  <input class="report_name" type="text" name="name" value="" placeholder="För och efternamn">
+  <input class="report_tel" type="tel" name="" value="" placeholder="Telefonnummer">
+  <input class="report_email" type="email" name="" value="" placeholder="Epost">
+  <p>Beskriv ärendet så detaljerat som möjligt</p>
+  <textarea name="name"  placeholder="Beskrivning..."></textarea>
+    </form>
+  </div>
+  <div class="submit-container">
+    <img class="arrow-left" src="./images/arrow_left_bakat.svg" alt="">
+    <button type="submit" name="submit" class="arrow-right">
+    <img src="./images/arrow_right_framat.svg" alt="">
+    </button>
+  </div>
+</div>
+
+</div>
+<script src="js/questionmark.js" charset="utf-8"></script>
+<script src="js/slick.min.js" charset="utf-8"></script>
+<script>
+$(document).ready(function(){
+  $('.single-item').slick({
+    dots: true
+  });
+});
+
+</script>
+</body>
+</html>

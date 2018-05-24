@@ -14,6 +14,7 @@ mix.disableSuccessNotifications();
 
  mix.js('src/js/app.js', 'js/app.js')
     .js('src/js/location/locationHandler.js', 'js/')
+    .js('src/js/error/questionmark.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([

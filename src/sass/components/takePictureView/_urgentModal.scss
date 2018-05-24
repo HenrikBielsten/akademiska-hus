@@ -33,6 +33,7 @@
   align-items: center;
   background: white;
   overflow: hidden;
+  pointer-events: visible;
   transform: translateX(-900px);
   // transform: translateX(0);
   transition: all 0.2s ease-in-out;
@@ -93,15 +94,14 @@
   }
 
   .urgentChooseArea.top {
-    top: 0;
+    top: 32%;
   }
 
   .urgentChooseArea {
     position: absolute;
     height: 7%;
-    margin-bottom: 3%;
     pointer-events: visible;
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: center;
     bottom: 0;
@@ -116,19 +116,23 @@
     .parent {
       height: 100%;
       width: 100%;
-      display: block;
+      display: flex;
+      align-items: center;
       cursor: pointer;
-      line-height: 30px;
-      height: 30px;
-      border-bottom: 1px solid $primary;
-      background-color: #fff;
-      color: #000;
+      height: 100%;
+      border-bottom: 0.5px solid $primary;
+      background-color: $primary;
+      color: #fff;
       z-index: 999;
       position: relative;
       -webkit-transition: border-radius 0.1s linear, background 0.1s linear, z-index 0s linear;
       -webkit-transition-delay: 0s;
-      text-align: left;
-      font-size: 18px;
+
+      p {
+        text-align: left;
+        font-size: 18px;
+        margin-left: 10%;
+      }
 
       .expand-icon {
         float: right;
@@ -142,16 +146,7 @@
         }
       }
     }
-    // .content:hover ~ .parent,
-    // .parent:hover {
-    //   background: #fff;
-    //   -webkit-transition-delay: 0s, 0s, 0s;
-    // }
-    // .content:hover ~ .parent {
-    //   border-bottom-left-radius: 0;
-    //   border-bottom-right-radius: 0;
-    //   z-index: 999;
-    // }
+
     .content {
       position: absolute;
       top: 0;
@@ -162,27 +157,14 @@
       overflow: hidden;
       padding-top: 30px;
       transition: max-height 0.4s linear;
-      // -webkit-transition: height 0.4s linear;
     }
-    // .wrapper:active .content {
-    //   height: auto;
-    //   z-index: 3;
-    //   // -webkit-transition-delay: 0.2s;
-    //   max-height: 65vh;
-    //   overflow: scroll;
-    // }
+
     .content.active {
       z-index: 3;
-      max-height: 65vh;
+      max-height: 45vh;
       overflow: scroll;
     }
-    // .content:hover {
-    //   height: auto;
-    //   z-index: 3;
-    //   -webkit-transition-delay: 0s;
-    //   max-height: 65vh;
-    //   overflow: scroll;
-    // }
+
     .content ul {
       background: #fff;
       margin: 0;

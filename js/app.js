@@ -110,7 +110,6 @@ const urgentModal = document.querySelector('.urgentModal');
 const modalOverlay = document.querySelector('.modalOverlay');
 const chooseAreaButton = document.querySelector('.urgentChooseArea');
 const closeUrgentModalButton = document.querySelector('.closeUrgentModalIcon');
-const campusListButtons = document.querySelectorAll('.urgentChooseArea li');
 const contentContainer = document.querySelector('.urgentChooseArea .wrapper .content');
 
 
@@ -134,30 +133,12 @@ closeUrgentModalButton.addEventListener("click", (e) => {
 
 })
 
-campusListButtons.forEach(campusListButton => campusListButton.addEventListener("click", e => {
-
-// campusListButton.style.background = 'rgba(223,223,223,1';
-
-}));
 
 $('.urgentChooseArea .wrapper .parent').click(function(){
-  // if ($(chooseAreaButton).hasClass("top")) {
-  //   $(".urgentChooseArea .wrapper .content").css("max-height", "0");
-  // } else {
-  //   $(".urgentChooseArea .wrapper .content").css("max-height", "65vh");
-  // }
 
   $(chooseAreaButton).toggleClass('top',400);
   $(contentContainer).toggleClass('active');
-//   $(this).removeClass('bottom');
-// $(this).addClass('top',400);
-  // if ($(this).hasClass("bottom")) {
-  //   $(this).removeClass('bottom');
-  //   $(this).addClass('top',400);
-  // } else if ($(this).hasClass("top")) {
-  //   $(this).removeClass('top');
-  //   $(this).addClass('bottom',400);
-  // }
+
 });
 
 const locationText2 = document.querySelector('.locationText-2');

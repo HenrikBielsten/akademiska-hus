@@ -1,6 +1,8 @@
 // locationView
 @import "components/variables";
 @import "components/body";
+@import "components/slick";
+@import "components/slick-theme";
 @import "components/locationView/bottomMenu";
 @import "components/locationView/choices";
 @import "components/locationView/locationView";
@@ -12,3 +14,4 @@
 @import "components/takePictureView/takePictureView";
 @import "components/takePictureView/tooMany";
 @import "components/takePictureView/urgentModal";
+@import "components/reportImageCover";
