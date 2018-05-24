@@ -1,4 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);body {
+@import url(https://fonts.googleapis.com/css?family=Roboto);@font-face {
+  font-family: scene;
+  src: url("../fonts/SceneAH-Medium.otf");
+}
+
+body {
   margin: 0;
   font-family: 'Arial', sans-serif !important;
 }
@@ -6,23 +11,92 @@
 .bottomMenu {
   width: inherit;
   height: 8vh;
-  background: green;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 5vw 0 5vw;
+}
+
+.bottomMenu .hamburgerIcon {
+  height: 3vh;
 }
 
 .choicesContaier {
   width: inherit;
   height: 42vh;
-  background: blue;
+  background: #FFFFFF;
 }
 
-.locationText-1, .locationText-2 {
+.choicesContaier .locationText-1, .choicesContaier .locationText-2 {
   width: inherit;
-  height: 9vh;
+  height: 8vh;
   padding: 2vh 5vw 0 5vw;
   color: #1E1E1E;
   font-family: Arial;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 19px;
+}
+
+.choicesContaier .locationText-2 {
+  padding: 0 5vw 0 5vw;
+}
+
+.choicesContaier .chooseCampus {
+  height: 8vh;
+  width: inherit;
+  background: yellow;
+}
+
+.choicesContaier .chooseBuilding {
+  height: 8vh;
+  width: inherit;
+  background: purple;
+}
+
+.choicesContaier .forwardsBackwardsContainer {
+  width: inherit;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.choicesContaier .forwardsBackwardsContainer .leftArrowContainer, .choicesContaier .forwardsBackwardsContainer .rightArrowContainer {
+  height: inherit;
+  width: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #141414;
+  font-family: Arial;
+  font-size: 12px;
+  letter-spacing: 0.08px;
+  line-height: 12px;
+  text-decoration: none;
 }
 
 .container {
@@ -47,7 +121,6 @@
 .map {
   width: inherit;
   height: 50vh;
-  background: red;
 }
 
 .popupCampus, .popupBuilding {
@@ -69,7 +142,7 @@
   font-size: 13px;
   letter-spacing: 1.38px;
   line-height: 14px;
-  margin-left: 5vw;
+  margin: 2vh 0 0 5vw;
 }
 
 /* The location pointed to by the popup tip. */
@@ -144,12 +217,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1vh;
 }
 
-.continueIcon {
+.continueContainer .continueIcon {
   height: 4vh;
   width: 20vh;
   opacity: 0.5;
@@ -165,15 +239,19 @@
           align-items: center;
 }
 
-.continueButton {
+.continueContainer .continueButton {
   pointer-events: none;
   text-decoration: none;
+}
+
+.continueContainer img {
+  margin-left: 4vw;
 }
 
 .imagePreview {
   width: 100vw;
   height: 56vh;
-  background: #e6e6e6;
+  background: #E9EFE9;
   overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -589,4 +667,178 @@
 .urgentModal .urgentChooseArea .content li:last-of-type {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.info {
+  height: inherit;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2vh 0 2vh;
+}
+
+.info .infoIcon {
+  height: 14vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info .infoIcon img {
+  height: inherit;
+}
+
+.info .infoH1 {
+  color: #313131;
+  font-family: 'scene';
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+}
+
+.info .infoH2 {
+  color: #1E1E1E;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+}
+
+.info .infoText {
+  color: #1E1E1E;
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.info .infoArrow {
+  height: 7vh;
+}
+
+.info .infoArrow img {
+  height: inherit;
+}
+
+.instructions {
+  height: inherit;
+  width: inherit;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3vh 0 3vh;
+}
+
+.instructions .instructionsIcon {
+  height: 14vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.instructions .instructionsIcon img {
+  height: inherit;
+}
+
+.instructions .instructionsH1 {
+  color: #313131;
+  font-family: 'scene';
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+}
+
+.instructions .instructionsList {
+  color: #1E1E1E;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.instructions .instructionsList ol {
+  margin: 0;
+}
+
+.instructions .instructionsList ol li {
+  margin-top: 1vh;
+}
+
+.instructions .instructionsText {
+  color: #1E1E1E;
+  font-family: Arial;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 20px;
+  text-align: center;
+}
+
+.instructions .infoArrow {
+  height: 7vh;
+}
+
+.instructions .infoArrow img {
+  height: inherit;
+}
+
+.hamburgerMenu {
+  height: 44vh;
+  width: inherit;
+  background: #00A388;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: -100vw;
+}
+
+.hamburgerMenu .myErrorReports, .hamburgerMenu .myAccount, .hamburgerMenu .logOut {
+  color: #FFFFFF;
+  font-family: "scene";
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 40px;
 }

@@ -25,5 +25,8 @@
   "homepage": "https://github.com/HenrikBielsten/akademiska-hus#readme",
   "devDependencies": {
     "laravel-mix": "^2.1.11"
+  },
+  "dependencies": {
+    "google-maps": "^3.3.0"
   }
 }

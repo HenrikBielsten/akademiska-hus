@@ -1,15 +1,55 @@
 .choicesContaier {
   width: inherit;
   height: 42vh;
-  background: blue;
-}
+  background: #FFFFFF;
 
-.locationText-1, .locationText-2 {
+  .locationText-1, .locationText-2 {
     width: inherit;
-    height: 9vh;
+    height: 8vh;
     padding: 2vh 5vw 0 5vw;
-  	color: #1E1E1E;
+    color: #1E1E1E;
     font-family: Arial;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 19px;
+  }
+
+  .locationText-2 {
+    padding: 0 5vw 0 5vw;
+  }
+
+  .chooseCampus {
+    height: 8vh;
+    width: inherit;
+    background: yellow;
+  }
+
+  .chooseBuilding {
+    height: 8vh;
+    width: inherit;
+    background: purple;
+  }
+
+  .forwardsBackwardsContainer {
+    width: inherit;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .leftArrowContainer, .rightArrowContainer {
+      height: inherit;
+      width: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      color: #141414;
+      font-family: Arial;
+      font-size: 12px;
+      letter-spacing: 0.08px;
+      line-height: 12px;
+      text-decoration: none;
+    }
+  }
 }

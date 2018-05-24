@@ -1,0 +1,19 @@
+<svg width="29" height="33" viewBox="0 0 29 33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M18.8 11H7.61l4.88-4.88a1 1 0 0 0 0-1.42 1 1 0 0 0-1.4 0l-6.6 6.6a1 1 0 0 0 0 1.4l6.6 6.6a1 1 0 1 0 1.4-1.42L7.62 13H18.8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z" id="a"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(2 -4)">
+      <mask id="b" fill="#fff">
+        <use xlink:href="#a"/>
+      </mask>
+      <use fill="#000" fill-rule="nonzero" xlink:href="#a"/>
+      <g mask="url(#b)" fill="#000" fill-opacity=".54">
+        <path d="M0 0h24v24H0z"/>
+      </g>
+    </g>
+    <text font-family="ArialMT, Arial" font-size="11" letter-spacing=".08" fill="#141414" transform="translate(-11 -4)">
+      <tspan x="11.22" y="36">Bakåt</tspan>
+    </text>
+  </g>
+</svg>

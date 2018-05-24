@@ -1,3 +1,10 @@
+const infoArrow = document.querySelector('.infoArrow');
+
+infoArrow.addEventListener("click", (e) => {
+  info.style.display = 'none';
+  instructions.style.display = 'flex';
+})
+
 var latitude = "";
 var longitude = "";
 var myLocation = "";
@@ -35,10 +42,14 @@ var fileSelect = document.querySelector(".fileSelect"),
     startText = document.querySelector(".startText"),
     continueButton = document.querySelector(".continueButton"),
     continueIcon = document.querySelector(".continueIcon");
+    info = document.querySelector(".info");
+    instructions = document.querySelector(".instructions");
 
+var filesArray = [];
 
-
-const filesArray = [];
+// if (localStorage.getItem('images')) {
+//   filesArray = localStorage.getItem('images');
+// }
 
 if (filesArray.length < 4) {
   fileSelect.addEventListener("click", (e) => {
@@ -67,7 +78,8 @@ function handleFiles(files) {
     return;
   } else {
 
-    startText.innerHTML = "";
+    info.style.display = 'none';
+    instructions.style.display = 'none';
 
     for (var i = 0; i < files.length; i++) {
 
@@ -82,6 +94,8 @@ function handleFiles(files) {
       filesArray.push(img);
 
       console.log(filesArray);
+
+      localStorage.setItem('images', filesArray);
 
       if (filesArray.length >= 1) {
         continueButton.style.pointerEvents = 'all';
@@ -156,9 +170,15 @@ const locationText2 = document.querySelector('.locationText-2');
 
 
 continueButton.addEventListener("click", (e) => {
-  console.log(filesArray);
-  console.log(myLocation);
 
   localStorage.setItem("latitude",latitude);
   localStorage.setItem("longitude",longitude);
 })
+
+const hamburgerMenu = document.querySelector('.hamburgerMenu');
+const hamburger = document.querySelector('.hamburger');
+
+$(hamburger).click(function() {
+  console.log('click');
+  $(hamburgerMenu).animate({right: '0vw'}, "fast");
+});
