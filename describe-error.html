@@ -39,24 +39,29 @@
   <h2>Beskriv ditt ärende</h2>
   <img class="questionmark" src="./images/questionmark_small.svg" alt="">
   </div>
-  <form class="" action="index.html" method="post">
-  <input class="report_name" type="text" name="name" value="" placeholder="För och efternamn">
-  <input class="report_tel" type="tel" name="" value="" placeholder="Telefonnummer">
-  <input class="report_email" type="email" name="" value="" placeholder="Epost">
+  <form id="reportForm">
+  <input class="name" id="name" type="text" placeholder="För och efternamn">
+  <input class="phone" id="phone" type="tel" placeholder="Telefonnummer">
+  <input class="email" id="email" type="email" placeholder="Epost">
   <p>Beskriv ärendet så detaljerat som möjligt</p>
-  <textarea name="name"  placeholder="Beskrivning..."></textarea>
+  <textarea id="message" placeholder="Beskrivning..."></textarea>
     </form>
   </div>
   <div class="submit-container">
     <img class="arrow-left" src="./images/arrow_left_bakat.svg" alt="">
-    <button type="submit" name="submit" class="arrow-right">
+    <button type="submit" value="Submit" form="reportForm" class="arrow-right">
     <img src="./images/arrow_right_framat.svg" alt="">
     </button>
+  </div>
+  <div class="bottomMenu">
+    <img src="./images/logo_ahus.svg" alt="">
+    <img class="hamburgerIcon" src="./images/menu_hamburger.svg" alt="">
   </div>
 </div>
 
 </div>
 <script src="js/questionmark.js" charset="utf-8"></script>
+<script src="js/error-submit.js" charset="utf-8"></script>
 <script src="js/slick.min.js" charset="utf-8"></script>
 <script>
 $(document).ready(function(){

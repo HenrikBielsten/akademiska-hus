@@ -60,48 +60,23 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 7:
+/***/ 14:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+module.exports = __webpack_require__(15);
 
 
 /***/ }),
 
-/***/ 8:
+/***/ 15:
 /***/ (function(module, exports) {
 
-var questionMark = document.querySelector('.questionmark');
-var closePopupX = document.querySelector('.xIcon');
-var collapseIcon = document.querySelector('.collapseIcon');
-var expandIcon = document.querySelector('.expandIcon');
 
-$(questionMark).click(function () {
-    $(".questionmark_popup").animate({ right: '20px' });
-});
-
-$(closePopupX).click(function () {
-    $(".questionmark_popup").animate({ right: '375px' });
-});
-
-$(collapseIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '-67%' });
-    $(".slick-dots").animate({ top: '92%' });
-    $(this).hide();
-    $(expandIcon).show();
-});
-
-$(expandIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '0' });
-    $(".slick-dots").animate({ top: '25%' });
-    // $(this).hide();
-    $(collapseIcon).show();
-});
 
 /***/ })
 
