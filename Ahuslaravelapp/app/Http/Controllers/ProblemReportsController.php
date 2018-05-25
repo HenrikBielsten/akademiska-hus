@@ -18,7 +18,7 @@ class ProblemReportsController extends Controller
     public function index()
     {
         //
-        $problemReport = ProblemReport::paginate(2);
+        $problemReport = ProblemReport::paginate(0);
 
         return ProblemReportsResource::collection($problemReport);
     }
@@ -32,10 +32,12 @@ class ProblemReportsController extends Controller
      */
     public function store(Request $request)
     {
-        $problemReport = $request->IsMethod('put') ? ProblemReport::findOrFail($request->report_id) : new ProblemReport;
+        $problemReport = $request->IsMethod('put') ? ProblemReport::findOrFail
+        ($request->report_id) : new ProblemReport;
 
         $problemReport->report_id = $request->input('report_id');
         $problemReport->user_id = $request->input('user_id');
+        $problemReport->status = $request->input('status');
         $problemReport->name = $request->input('name');
         $problemReport->phone = $request->input('phone');
         $problemReport->email = $request->input('email');

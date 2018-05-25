@@ -16,8 +16,10 @@ mix.disableSuccessNotifications();
     .js('src/js/location/fetchBuilding.js', 'js/')
     .js('src/js/location/locationHandler.js', 'js/')
     .js('src/js/error/questionmark.js', 'js/')
+    .js('src/js/error/error-submit.js', 'js/')
     .js('src/js/location/map.js', 'js/')
     .js('src/js/location/hamburgerMenu2.js', 'js/')
+    .js('src/js/report/fetchReport.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([

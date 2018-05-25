@@ -60,48 +60,53 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 7:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 10:
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__(8);
+document.getElementById('reportForm').addEventListener('submit', postData);
 
+function postData(event) {
+  event.preventDefault();
+
+  var name = document.getElementById('name').value;
+  var phone = document.getElementById('phone').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+
+  var reqBody = {
+    name: name,
+    phone: phone,
+    email: email,
+    message: message
+  };
+
+  console.log("working");
+
+  fetch('http://localhost:8888/api/problem_report', {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(reqBody)
+  }).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    return console.log(data);
+  }).catch(function (err) {
+    return console.log(err);
+  });
+}
 
 /***/ }),
 
-/***/ 8:
-/***/ (function(module, exports) {
+/***/ 9:
+/***/ (function(module, exports, __webpack_require__) {
 
-var questionMark = document.querySelector('.questionmark');
-var closePopupX = document.querySelector('.xIcon');
-var collapseIcon = document.querySelector('.collapseIcon');
-var expandIcon = document.querySelector('.expandIcon');
+module.exports = __webpack_require__(10);
 
-$(questionMark).click(function () {
-    $(".questionmark_popup").animate({ right: '20px' });
-});
-
-$(closePopupX).click(function () {
-    $(".questionmark_popup").animate({ right: '375px' });
-});
-
-$(collapseIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '-67%' });
-    $(".slick-dots").animate({ top: '92%' });
-    $(this).hide();
-    $(expandIcon).show();
-});
-
-$(expandIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '0' });
-    $(".slick-dots").animate({ top: '25%' });
-    // $(this).hide();
-    $(collapseIcon).show();
-});
 
 /***/ })
 

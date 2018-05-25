@@ -15,8 +15,8 @@ $(closePopupX).click(function(){
 
 
 $(collapseIcon).click(function(){
-    $(".describe-report-container").animate({bottom: '-440px'});
-    $(".slick-dots").animate({top: '90%'});
+    $(".describe-report-container").animate({bottom: '-67%'});
+    $(".slick-dots").animate({top: '92%'});
     $(this).hide();
     $(expandIcon).show();
 });
