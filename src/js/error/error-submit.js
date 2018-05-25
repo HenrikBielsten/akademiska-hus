@@ -9,6 +9,10 @@ document.getElementById('reportForm').addEventListener('submit', postData);
             let message = document.getElementById('message').value;
 
 
+            if (!name || !phone || !email || !message) {
+              return false;
+            }
+
             let reqBody = {
               name: name,
               phone: phone,
@@ -25,4 +29,13 @@ document.getElementById('reportForm').addEventListener('submit', postData);
             }).then((res) => res.json())
             .then((data) =>  console.log(data))
             .catch((err)=>console.log(err))
+
+
+                $(".loading-overlay").show();
+
+            setTimeout(function() {
+            window.location.href = "report-received.html";
+        }, 1000);
+
+
         }

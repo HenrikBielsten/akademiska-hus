@@ -19,6 +19,7 @@ mix.disableSuccessNotifications();
     .js('src/js/error/error-submit.js', 'js/')
     .js('src/js/location/map.js', 'js/')
     .js('src/js/report/fetchReport.js', 'js/')
+    .js('src/js/loading/loading.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([

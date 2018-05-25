@@ -60,58 +60,23 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 14:
+/***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(15);
+module.exports = __webpack_require__(17);
 
 
 /***/ }),
 
-/***/ 15:
+/***/ 17:
 /***/ (function(module, exports) {
 
-var buildingId = 1;
 
-function fetchReport() {
-
-  return fetch('http://localhost:8888/api/problem_reports').then(function (response) {
-    return response.json();
-  }).then(function (data) {
-
-    var lastItem = data.data.pop();
-
-    console.log(lastItem);
-
-    document.getElementById("name").innerHTML = lastItem['name'];
-    document.getElementById("email").innerHTML = lastItem['email'];
-    document.getElementById("phone").innerHTML = lastItem['phone'];
-    document.getElementById("message").innerHTML = lastItem['message'];
-
-    return fetch('http://localhost:8888/api/buildings').then(function (response) {
-      return response.json();
-    }).then(function (data) {
-
-      console.log(data.data.find(function (x) {
-        return x.id === buildingId;
-      }));
-
-      var returnedBuilding = data.data.find(function (x) {
-        return x.id === buildingId;
-      });
-
-      document.getElementById("address").innerHTML = returnedBuilding['building_address'];
-      document.getElementById("building").innerHTML = returnedBuilding['building_name'];
-    });
-  });
-}
-
-fetchReport();
 
 /***/ })
 

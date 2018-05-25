@@ -78,6 +78,10 @@ function postData(event) {
   var email = document.getElementById('email').value;
   var message = document.getElementById('message').value;
 
+  if (!name || !phone || !email || !message) {
+    return false;
+  }
+
   var reqBody = {
     name: name,
     phone: phone,
@@ -98,6 +102,12 @@ function postData(event) {
   }).catch(function (err) {
     return console.log(err);
   });
+
+  $(".loading-overlay").show();
+
+  setTimeout(function () {
+    window.location.href = "report-received.html";
+  }, 1000);
 }
 
 /***/ }),
