@@ -60,47 +60,43 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 7:
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+module.exports = __webpack_require__(13);
 
 
 /***/ }),
 
-/***/ 8:
+/***/ 13:
 /***/ (function(module, exports) {
 
-var questionMark = document.querySelector('.questionmark');
-var closePopupX = document.querySelector('.xIcon');
-var collapseIcon = document.querySelector('.collapseIcon');
-var expandIcon = document.querySelector('.expandIcon');
+var hamburgerMenu = document.querySelector('.hamburgerMenu');
+var hamburger = document.querySelector('.hamburger');
+var hamburgerClose = document.querySelector('.hamburgerClose');
+var hamburgerPath1 = document.querySelector('.hamburgerPath-1');
 
-$(questionMark).click(function () {
-    $(".questionmark_popup").animate({ right: '20px' });
+var toggler = 0;
+
+$(hamburger).click(function () {
+
+  $(hamburgerMenu).animate({ right: '0vw' }, "fast");
+
+  hamburger.style.display = 'none';
+  hamburgerClose.style.display = 'block';
 });
 
-$(closePopupX).click(function () {
-    $(".questionmark_popup").animate({ right: '375px' });
-});
+$(hamburgerClose).click(function () {
 
-$(collapseIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '-440px' });
-    $(".slick-dots").animate({ top: '90%' });
-    $(this).hide();
-    $(expandIcon).show();
-});
+  $(hamburgerMenu).animate({ right: '-100vw' }, "fast");
 
-$(expandIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '0' });
-    $(".slick-dots").animate({ top: '25%' });
-    // $(this).hide();
-    $(collapseIcon).show();
+  hamburger.style.display = 'block';
+  hamburgerClose.style.display = 'none';
 });
 
 /***/ })

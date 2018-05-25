@@ -60,48 +60,51 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 7:
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+module.exports = __webpack_require__(13);
 
 
 /***/ }),
 
-/***/ 8:
+/***/ 13:
 /***/ (function(module, exports) {
 
-var questionMark = document.querySelector('.questionmark');
-var closePopupX = document.querySelector('.xIcon');
-var collapseIcon = document.querySelector('.collapseIcon');
-var expandIcon = document.querySelector('.expandIcon');
+var hamburgerMenu2 = document.querySelector('.hamburgerMenu2');
+var hamburger2 = document.querySelector('.hamburger2');
+var hamburgerClose2 = document.querySelector('.hamburgerClose2');
 
-$(questionMark).click(function () {
-    $(".questionmark_popup").animate({ right: '20px' });
+hamburger2.addEventListener('click', function (e) {
+
+  hamburgerMenu2.style.bottom = '0vh';
 });
 
-$(closePopupX).click(function () {
-    $(".questionmark_popup").animate({ right: '375px' });
+hamburgerClose2.addEventListener('click', function (e) {
+
+  hamburgerMenu2.style.bottom = '-44vh';
 });
 
-$(collapseIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '-440px' });
-    $(".slick-dots").animate({ top: '90%' });
-    $(this).hide();
-    $(expandIcon).show();
-});
-
-$(expandIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '0' });
-    $(".slick-dots").animate({ top: '25%' });
-    // $(this).hide();
-    $(collapseIcon).show();
-});
+// $(hamburger2).click(function() {
+//
+//     $(hamburgerMenu2).animate({right: '0vw'}, "fast");
+//
+//     hamburger2.style.display = 'none';
+//     hamburgerClose2.style.display = 'block';
+// });
+//
+// $(hamburgerClose2).click(function() {
+//
+//   $(hamburgerMenu2).animate({right: '-100vw'}, "fast");
+//
+//   hamburger2.style.display = 'block';
+//   hamburgerClose2.style.display = 'none';
+// });
 
 /***/ })
 

@@ -13,9 +13,23 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 var filesArray = [];
 
-// if (localStorage.getItem('images')) {
-//   filesArray = localStorage.getItem('images');
-// }
+var images = localStorage.getItem('images');
+
+console.log(images);
+
+if (images) {
+
+  for (var i = 0; i < images.length; i++) {
+
+    var img = document.createElement("img");
+    img.classList.add('selectedImage');
+    img.src = images[i];
+
+    imagePreview.appendChild(img);
+  }
+}
+
+console.log(filesArray);
 
 if (filesArray.length < 4) {
   fileSelect.addEventListener("click", (e) => {
@@ -61,7 +75,9 @@ function handleFiles(files) {
 
       console.log(filesArray);
 
-      localStorage.setItem('images', filesArray);
+      localStorage.setItem('images', img.src);
+
+      console.log(localStorage.getItem('images'));
 
       if (filesArray.length >= 1) {
         continueButton.style.pointerEvents = 'all';

@@ -60,48 +60,23 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 7:
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+module.exports = __webpack_require__(13);
 
 
 /***/ }),
 
-/***/ 8:
+/***/ 13:
 /***/ (function(module, exports) {
 
-var questionMark = document.querySelector('.questionmark');
-var closePopupX = document.querySelector('.xIcon');
-var collapseIcon = document.querySelector('.collapseIcon');
-var expandIcon = document.querySelector('.expandIcon');
-
-$(questionMark).click(function () {
-    $(".questionmark_popup").animate({ right: '20px' });
-});
-
-$(closePopupX).click(function () {
-    $(".questionmark_popup").animate({ right: '375px' });
-});
-
-$(collapseIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '-440px' });
-    $(".slick-dots").animate({ top: '90%' });
-    $(this).hide();
-    $(expandIcon).show();
-});
-
-$(expandIcon).click(function () {
-    $(".describe-report-container").animate({ bottom: '0' });
-    $(".slick-dots").animate({ top: '25%' });
-    // $(this).hide();
-    $(collapseIcon).show();
-});
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/henrikbielsten/Documents/akademiska-hus/src/js/location/newBurger.js'");
 
 /***/ })
 

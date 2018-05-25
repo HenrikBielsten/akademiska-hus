@@ -12,6 +12,7 @@ urgentIconSmall.addEventListener("click", (e) => {
 
   modalOverlay.style.opacity = '.2';
   urgentModal.style.transform = 'translateX(0px)';
+  container.style.pointerEvents = 'none';
 
 })
 
@@ -24,6 +25,7 @@ closeUrgentModalButton.addEventListener("click", (e) => {
   chooseAreaButton.className = chooseAreaButton.classList[0];
   contentContainer.className = contentContainer.classList[0];
   chooseAreaButton.classList.add("bottom");
+  container.style.pointerEvents = 'all';
 
 })
 

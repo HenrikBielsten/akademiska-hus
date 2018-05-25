@@ -17,6 +17,7 @@ mix.disableSuccessNotifications();
     .js('src/js/location/locationHandler.js', 'js/')
     .js('src/js/error/questionmark.js', 'js/')
     .js('src/js/location/map.js', 'js/')
+    .js('src/js/location/hamburgerMenu2.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([
