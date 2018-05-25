@@ -3,10 +3,11 @@
   height: 42vh;
   background: #FFFFFF;
 
-  .locationText-1, .locationText-2 {
+  .locationText-1,
+  .locationText-2 {
     width: inherit;
     height: 8vh;
-    padding: 2vh 5vw 0 5vw;
+    padding: 2vh 5vw 0;
     color: #1E1E1E;
     font-family: Arial;
     font-size: 17px;
@@ -15,19 +16,145 @@
   }
 
   .locationText-2 {
-    padding: 0 5vw 0 5vw;
+    padding: 0 5vw;
   }
 
+  .chooseBuilding.top,
+  .chooseCampus.top {
+    top: 18%;
+  }
+
+  .chooseBuilding,
   .chooseCampus {
-    height: 8vh;
-    width: inherit;
-    background: yellow;
+    position: absolute;
+    height: 5%;
+    pointer-events: visible;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 28%;
+
+    .wrapper {
+      display: inline-block;
+      width: 90%;
+      height: 100%;
+      position: relative;
+    }
+
+    .parent {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      height: 100%;
+      color: #fff;
+      background-color: $primary;
+      z-index: 999;
+      font-size: 18px;
+      position: relative;
+      -webkit-transition: border-radius 0.1s linear, background 0.1s linear, z-index 0s linear;
+      -webkit-transition-delay: 0s;
+      border: 0.5px solid #979797;
+      border-radius: 4px 4px 0 0;
+      box-sizing: border-box;
+      justify-content: space-between;
+
+      p {
+        text-align: left;
+        font-size: 18px;
+        margin-left: 3%;
+      }
+
+      .expand-icon {
+        float: right;
+        margin-right: 10%;
+        width: 8px;
+        height: 21px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .content {
+      position: absolute;
+      top: 0;
+      display: block;
+      z-index: 999;
+      max-height: 0;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 30px;
+      transition: max-height 0.4s linear;
+    }
+
+    .content.active {
+      z-index: 3;
+      max-height: 49vh;
+      overflow: scroll;
+    }
+
+    .content ul {
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+    }
+
+    .content ul a {
+      text-decoration: none;
+    }
+
+    .content li:hover {
+      background-color: rgba(223,223,223,1) !important;
+    }
+
+    .content li {
+      list-style: none;
+      text-align: left;
+      color: #888;
+      font-size: 14px;
+      height: 8vh;
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .campus_name {
+        font-size: 16px;
+      }
+
+      .campus_telephone {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        margin-top: 1%;
+
+        img {
+          margin-right: 4%;
+        }
+      }
+    }
+
+    .content li:last-of-type {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
   }
 
   .chooseBuilding {
-    height: 8vh;
-    width: inherit;
-    background: purple;
+    bottom: 22%;
+
+    .content.active {
+      max-height: 55vh;
+    }
   }
 
   .forwardsBackwardsContainer {
@@ -36,15 +163,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 33%;
 
-    .leftArrowContainer, .rightArrowContainer {
+    .leftArrowContainer,
+    .rightArrowContainer {
       height: inherit;
       width: 10vh;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-
       color: #141414;
       font-family: Arial;
       font-size: 12px;

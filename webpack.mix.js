@@ -12,24 +12,25 @@ let mix = require('laravel-mix');
  */
 mix.disableSuccessNotifications();
 
- mix.js('src/js/app.js', 'js/app.js')
-    .js('src/js/location/fetchBuilding.js', 'js/')
-    .js('src/js/location/locationHandler.js', 'js/')
-    .js('src/js/error/questionmark.js', 'js/')
-    .js('src/js/error/error-submit.js', 'js/')
-    .js('src/js/location/map.js', 'js/')
-    .js('src/js/location/hamburgerMenu2.js', 'js/')
-    .js('src/js/report/fetchReport.js', 'js/')
-    .js('src/js/loading/loading.js', 'js/')
+ mix.js('src/javascript/app.js', 'js/app.js')
+    .js('src/javascript/location/fetchBuilding.js', 'js/')
+    .js('src/javascript/location/locationHandler.js', 'js/')
+    .js('src/javascript/error/questionmark.js', 'js/')
+    .js('src/javascript/error/error-submit.js', 'js/')
+    .js('src/javascript/location/map.js', 'js/')
+    .js('src/javascript/location/hamburgerMenu2.js', 'js/')
+    .js('src/javascript/location/choices.js', 'js/')
+    .js('src/javascript/report/fetchReport.js', 'js/')
+    .js('src/javascript/loading/loading.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([
-      'src/js/takePictureView/infoArrow.js',
-      'src/js/takePictureView/geolocation.js',
-      'src/js/takePictureView/addFiles.js',
-      'src/js/takePictureView/urgentModal.js',
-      'src/js/takePictureView/continue.js',
-      'src/js/takePictureView/hamburgerMenu.js'
+      'src/javascript/takePictureView/infoArrow.js',
+      'src/javascript/takePictureView/geolocation.js',
+      'src/javascript/takePictureView/addFiles.js',
+      'src/javascript/takePictureView/urgentModal.js',
+      'src/javascript/takePictureView/continue.js',
+      'src/javascript/takePictureView/hamburgerMenu.js'
     ], 'js/app.js');
 
     mix.options({

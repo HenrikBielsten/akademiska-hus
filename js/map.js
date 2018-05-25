@@ -60,11 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
-=======
 /******/ 	return __webpack_require__(__webpack_require__.s = 11);
->>>>>>> ef5fef99d68a93543c3aed52b52252f9705c87d5
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -135,16 +131,6 @@ function fetchBuilding() {
 /* 6 */,
 /* 7 */,
 /* 8 */,
-<<<<<<< HEAD
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(10);
-
-
-/***/ }),
-/* 10 */
-=======
 /* 9 */,
 /* 10 */,
 /* 11 */
@@ -155,17 +141,12 @@ module.exports = __webpack_require__(12);
 
 /***/ }),
 /* 12 */
->>>>>>> ef5fef99d68a93543c3aed52b52252f9705c87d5
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__ = __webpack_require__(0);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_google_maps__ = __webpack_require__(11);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_google_maps__ = __webpack_require__(13);
->>>>>>> ef5fef99d68a93543c3aed52b52252f9705c87d5
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_google_maps__);
 
 
@@ -448,11 +429,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(
 });
 
 /***/ }),
-<<<<<<< HEAD
-/* 11 */
-=======
 /* 13 */
->>>>>>> ef5fef99d68a93543c3aed52b52252f9705c87d5
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory) {
