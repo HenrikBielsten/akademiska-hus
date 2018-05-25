@@ -47,9 +47,23 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 var filesArray = [];
 
-// if (localStorage.getItem('images')) {
-//   filesArray = localStorage.getItem('images');
-// }
+var images = localStorage.getItem('images');
+
+console.log(images);
+
+if (images) {
+
+  for (var i = 0; i < images.length; i++) {
+
+    var img = document.createElement("img");
+    img.classList.add('selectedImage');
+    img.src = images[i];
+
+    imagePreview.appendChild(img);
+  }
+}
+
+console.log(filesArray);
 
 if (filesArray.length < 4) {
   fileSelect.addEventListener("click", (e) => {
@@ -95,7 +109,9 @@ function handleFiles(files) {
 
       console.log(filesArray);
 
-      localStorage.setItem('images', filesArray);
+      localStorage.setItem('images', img.src);
+
+      console.log(localStorage.getItem('images'));
 
       if (filesArray.length >= 1) {
         continueButton.style.pointerEvents = 'all';
@@ -124,6 +140,7 @@ urgentIconSmall.addEventListener("click", (e) => {
 
   modalOverlay.style.opacity = '.2';
   urgentModal.style.transform = 'translateX(0px)';
+  container.style.pointerEvents = 'none';
 
 })
 
@@ -136,6 +153,7 @@ closeUrgentModalButton.addEventListener("click", (e) => {
   chooseAreaButton.className = chooseAreaButton.classList[0];
   contentContainer.className = contentContainer.classList[0];
   chooseAreaButton.classList.add("bottom");
+  container.style.pointerEvents = 'all';
 
 })
 
@@ -158,8 +176,20 @@ continueButton.addEventListener("click", (e) => {
 
 const hamburgerMenu = document.querySelector('.hamburgerMenu');
 const hamburger = document.querySelector('.hamburger');
+const hamburgerClose = document.querySelector('.hamburgerClose');
 
 $(hamburger).click(function() {
-  console.log('click');
-  $(hamburgerMenu).animate({right: '0vw'}, "fast");
+
+    $(hamburgerMenu).animate({right: '0vw'}, "fast");
+
+    hamburger.style.display = 'none';
+    hamburgerClose.style.display = 'block';
+});
+
+$(hamburgerClose).click(function() {
+
+  $(hamburgerMenu).animate({right: '-100vw'}, "fast");
+
+  hamburger.style.display = 'block';
+  hamburgerClose.style.display = 'none';
 });
