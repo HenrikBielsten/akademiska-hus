@@ -17,6 +17,7 @@ class ProblemReports extends JsonResource
         return [
             'report_id' => $this->report_id,
             'user_id' => $this->user_id,
+            'building_id' => $this->building_id,
             'status' => $this->status,
             'name' => $this->name,
             'phone' => $this->phone,
@@ -26,7 +27,8 @@ class ProblemReports extends JsonResource
             'image_1' => $this->image_1,
             'image_2' => $this->image_2,
             'image_3' => $this->image_3,
-            'image_4' => $this->image_4
+            'image_4' => $this->image_4,
+            'created_at' => $this->created_at
         ];
     }
 }
