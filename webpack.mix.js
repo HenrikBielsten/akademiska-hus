@@ -22,7 +22,7 @@ mix.disableSuccessNotifications();
     .js('src/javascript/location/choices.js', 'js/')
     .js('src/javascript/report/fetchReport.js', 'js/')
     .js('src/javascript/loading/loading.js', 'js/')
-    .js('src/javascript/report/fetchMyReports.js', 'js/')
+    .js('src/javascript/report/my-reports.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
     mix.combine([

@@ -17,17 +17,38 @@
       font-family: 'scene';
     }
 
+    .box.active {
+      height: 37vh !important;
+    }
+
     .box {
       background-color: #FFFFFF;
       border-radius: 4px;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
       width: 100%;
       margin-top: 5%;
-      height: auto;
-      min-height: 18%;
-      color: #151515;
+      height: 20vh;
+      color: rgba(49,49,49,1);
       padding: 3%;
       box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: all 0.4s;
+
+      .box-wrapper {
+        position: relative;
+        height: 100%;
+      }
+
+      .topSection {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 19vh;
+        position: relative;
+      }
 
       .content {
         width: 70%;
@@ -64,6 +85,40 @@
         .Pågående {
           color: rgba(238, 127, 0, 0.8) !important;
         }
+      }
+
+      .image {
+        width: 30%;
+        height: 14vh;
+        background-color: black;
+      }
+
+      .expand.active {
+        transform: rotate(270deg) !important;
+      }
+
+      .expand {
+        background-image: url("../images/expand_list_green.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        background-size: 40%;
+        bottom: 0;
+        right: 3%;
+        z-index: 9999;
+      }
+
+      textarea {
+        width: 100%;
+        height: 12vh;
+        border: 0.5px solid #979797;
+        border-radius: 4px;
+        resize: none;
+        margin-bottom: 8%;
+        box-sizing: border-box;
+        padding: 2%;
       }
     }
 

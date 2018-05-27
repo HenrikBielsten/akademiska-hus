@@ -76,7 +76,11 @@ module.exports = __webpack_require__(21);
 /***/ 21:
 /***/ (function(module, exports) {
 
+$(".loading-overlay").show();
 
+setTimeout(function () {
+  $('.loading-overlay').hide();
+}, 1000);
 
 /***/ })
 
