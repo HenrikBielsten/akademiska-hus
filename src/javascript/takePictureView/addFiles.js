@@ -16,10 +16,9 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 var filesArray = [];
 
-console.log('img1: ' + localStorage.img1);
-console.log('img2: ' + localStorage.img2);
-console.log('img3: ' + localStorage.img3);
-console.log('img4: ' + localStorage.img4);
+if (localStorage.images) {
+  filesArray = JSON.parse(localStorage.getItem('images'));
+}
 
 if (filesArray.length < 4) {
   fileSelect.addEventListener("click", (e) => {
@@ -62,13 +61,12 @@ function handleFiles(evt) {
         var img = new Image();
         img.src = e.target.result;
 
-
         img.onload= function () {
 
           var data = resizeImage.resize(img, 200, 100, resizeImage.JPEG);
           var resized = new Image();
           resized.classList.add('selectedImage');
-          resized.src = data; // local image url
+          resized.src = data;
           imgDiv.appendChild(resized);
 
           var encodedData = base64.encode(data);
@@ -82,38 +80,21 @@ function handleFiles(evt) {
 
           $('.single-item').slick(getSliderSettings());
 
+          filesArray.push(encodedData)
 
-          if (!localStorage.img1) {
-            localStorage.setItem('img1', encodedData);
-          }
+          console.log(filesArray);
 
-          if (localStorage.img1 && !localStorage.img2) {
-            localStorage.setItem('img2', encodedData);
-          }
+          localStorage.setItem('images', JSON.stringify(filesArray));
 
-          if (localStorage.img1 && localStorage.img2 && !localStorage.img3) {
-            localStorage.setItem('img3', encodedData);
-          }
+          console.log('images: ' + localStorage.images);
 
-          if (localStorage.img1 && localStorage.img2 && localStorage.img3 && !localStorage.img4) {
-            localStorage.setItem('img4', encodedData);
-          }
         };
-
-
-        console.log('img1: ' + localStorage.img1);
-        console.log('img2: ' + localStorage.img2);
-        console.log('img3: ' + localStorage.img3);
-        console.log('img4: ' + localStorage.img4);
-
 
         info.style.display = 'none';
         instructions.style.display = 'none';
         $(".single-item").show();
       };
     })(f);
-
-    filesArray.push(imgDiv);
 
     if (filesArray.length >= 1) {
       continueButton.style.pointerEvents = 'all';
@@ -130,22 +111,46 @@ function handleFiles(evt) {
   }
 }
 
-// If there are images in localstorage we display them
-
 document.querySelector('.fileElem').addEventListener('change', handleFiles, false);
 
+// If there are images in localstorage we display them
 
-if(localStorage.img) {
-
+if(localStorage.images) {
 
   info.style.display = 'none';
   instructions.style.display = 'none';
 
+  for (var i = 0, f; f = filesArray[i]; i++) {
+
+    // function getSliderSettings(){
+    //   return {
+    //     dots: true
+    //   }
+    // }
+
+    var decodedData = base64.decode(filesArray[i]);
+
     var imgDiv = document.createElement('div');
-    imgDiv.innerHTML += ['<img class="selectedImage" src="', localStorage.img,
+    // var img = document.createElement('img');
+    //
+    // img.classList.add('selectedImage');
+    // img.src = decodedData;
+    // imgDiv.appendChild(img);
+    //
+    // $(".single-item").append(imgDiv);
+    //
+    // $('.single-item').slick('unslick');
+    // $(".single-item").append(imgDiv);
+    //
+    // $('.single-item').slick(getSliderSettings());
+    //
+    // $(".single-item").show();
+
+    imgDiv.innerHTML += ['<img class="selectedImage" src="', decodedData,
     '" title="test"/>'].join('');
 
     document.querySelector('.imagePreview').insertBefore(imgDiv, null);
+
 
     if (filesArray.length >= 1) {
       continueButton.style.pointerEvents = 'all';
@@ -156,5 +161,7 @@ if(localStorage.img) {
       fileSelect.style.pointerEvents = "none";
       fileSelect.style.opacity = '0.45';
     }
+
+  }
 
   }

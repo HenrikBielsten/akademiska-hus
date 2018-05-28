@@ -12,7 +12,10 @@
   padding-top: 3vh;
   padding-right: 5vw;
   right: -100vw;
-  box-shadow: 0 0 6px 2px rgba(0,0,0,0.25);
+
+  a {
+    text-decoration: none;
+  }
 
   .myErrorReports, .myAccount, .logOut {
     color: #FFFFFF;

@@ -2,7 +2,7 @@
   height: 44vh;
   width: inherit;
   background: $primary;
-  z-index: 100;
+  z-index: 2000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +14,10 @@
   bottom: -44vh;
   transition: all 200ms linear;
   box-shadow: 0 0 6px 2px rgba(0,0,0,0.25);
+
+  a {
+    text-decoration: none;
+  }
 
   .myErrorReports2, .myAccount2, .logOut2 {
     color: #FFFFFF;
