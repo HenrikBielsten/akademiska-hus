@@ -13,10 +13,10 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 var filesArray = [];
 
-console.log(localStorage.img1);
-console.log(localStorage.img2);
-console.log(localStorage.img3);
-console.log(localStorage.img4);
+// console.log(localStorage.img1);
+// console.log(localStorage.img2);
+// console.log(localStorage.img3);
+// console.log(localStorage.img4);
 
 if (filesArray.length < 4) {
   fileSelect.addEventListener("click", (e) => {
@@ -102,11 +102,22 @@ function handleFiles(evt) {
     reader.onload = (function(theFile) {
       return function(e) {
 
-        var imgDiv = document.createElement('div');
-        imgDiv.innerHTML = ['<img class="selectedImage" src="', e.target.result,
-                          '" title="', escape(theFile.name), '"/>'].join('');
+        function getSliderSettings(){
+          return {
+            dots: true
+          }
+        }
 
-        document.querySelector('.imagePreview').insertBefore(imgDiv, null);
+        let image = ['<div><img class="selectedImage" src="', e.target.result,
+                          '" title="', escape(theFile.name), '"/></div>'].join('');
+
+        $(".single-item").append(image);
+
+        $('.single-item').slick('unslick')
+        $(".single-item").append(image);
+
+        $('.single-item').slick(getSliderSettings());
+
 
         if (localStorage.img1) {
           localStorage.setItem('img2', e.target.result);
@@ -122,13 +133,14 @@ function handleFiles(evt) {
           localStorage.setItem('img1', e.target.result);
         }
 
-        console.log(localStorage.img1);
-        console.log(localStorage.img2);
-        console.log(localStorage.img3);
-        console.log(localStorage.img4);
+        // console.log(localStorage.img1);
+        // console.log(localStorage.img2);
+        // console.log(localStorage.img3);
+        // console.log(localStorage.img4);
 
         info.style.display = 'none';
         instructions.style.display = 'none';
+        $(".single-item").show();
       };
     })(f);
 

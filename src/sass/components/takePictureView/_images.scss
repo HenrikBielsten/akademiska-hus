@@ -1,17 +1,26 @@
 .imagePreview {
-  width: 100vw;
-  height: 56vh;
-  background: #E9EFE9;
-  overflow: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+	width: 100vw;
+	height: 56vh;
+	background: #E9EFE9;
+	overflow: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+
+	.single-item {
+		display: none;
+
+		.slick-dots {
+			bottom: 5%;
+			top: unset;
+		}
+	}
 }
 
 .selectedImage {
-  width: 100vw;
-  height: 56vh;
-  flex-shrink: 0;
-  object-fit: cover;
+	width: 100vw;
+	height: 56vh;
+	flex-shrink: 0;
+	object-fit: cover;
 }

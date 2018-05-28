@@ -69,8 +69,9 @@
       </div>
 
     </div>
-
-  </div> <!-- end imagePreview -->
+    <div class="single-item">
+  </div>
+  </div>
 
   <div class="bottomContianer">
 
@@ -218,9 +219,16 @@
 </div> <!-- End contianer -->
 
 </body>
+<script src="js/app.js"></script>
+<script src="js/slick.min.js" charset="utf-8"></script>
 <script>
+$(document).ready(function(){
+  $('.single-item').slick({
+    dots: true
+  });
+});
+
 $( ".content li:even" ).css( "background-color", "rgba(223, 223, 223, 0.18)");
 </script>
 
-  <script src="js/app.js"></script>
 </html>
