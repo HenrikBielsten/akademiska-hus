@@ -133,8 +133,6 @@ if(localStorage.images) {
     $(".single-item").append(imgDiv);
     $(".single-item").show();
 
-
-
     if (filesArray.length >= 1) {
       continueButton.style.pointerEvents = 'all';
       continueIcon.style.opacity = '1';
