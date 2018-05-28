@@ -41,8 +41,6 @@ $(document).on('click', '.chooseCampus .wrapper .content ul li', function(){
   let choosenCampus = $(this).text();
     $('.chooseCampus .wrapper .parent p').text(choosenCampus);
 
-
-
     fetch('http://localhost:8888/api/buildings')
     .then(response => response.json())
     .then(data => {

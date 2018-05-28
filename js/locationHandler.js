@@ -164,14 +164,6 @@ function fetchBuildings() {
         jQuery.each(resultCampus, function (index, item) {
             $(".chooseCampus .wrapper .content ul").append("<li><span class='campus_name'>" + this + "</span></li>");
         });
-
-        // jQuery.each(data.data, function(index, item) {
-        //
-        //     if (this['campus'] == $(".chooseCampus .wrapper .parent").text()) {
-        //     console.log(this['building_name']);
-        //     }
-        // });
-
     });
 }
 fetchBuildings();
