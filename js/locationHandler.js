@@ -122,6 +122,8 @@ function fetchBuilding() {
   });
 }
 
+console.log(localStorage.img);
+
 /***/ }),
 /* 1 */,
 /* 2 */,

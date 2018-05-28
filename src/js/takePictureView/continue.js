@@ -5,4 +5,6 @@ continueButton.addEventListener("click", (e) => {
 
   localStorage.setItem("latitude",latitude);
   localStorage.setItem("longitude",longitude);
+
+  console.log(filesArray);
 })
