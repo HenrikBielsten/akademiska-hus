@@ -43,14 +43,8 @@ fetchReports();
 
 
 $(document).on('click', '.expand', function(){
-  console.log("clicked");
     let targetParent  = $(this).parents('.box')[0];
     $(targetParent).toggleClass('active',400);
     console.log(this);
     $(this).toggleClass('active',400);
 });
-
-// $(expandButton).click(function(){
-//   console.log("hello");
-//     // $(".questionmark_popup").animate({right: '20px'});
-// });
