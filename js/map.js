@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 18);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -127,21 +127,21 @@ console.log(localStorage.img);
 
 /***/ }),
 
-/***/ 18:
+/***/ 21:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(19);
+module.exports = __webpack_require__(22);
 
 
 /***/ }),
 
-/***/ 19:
+/***/ 22:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_google_maps__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_google_maps__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_google_maps__);
 
 
@@ -425,7 +425,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(
 
 /***/ }),
 
-/***/ 20:
+/***/ 23:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory) {
