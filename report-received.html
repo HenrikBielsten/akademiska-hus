@@ -15,6 +15,14 @@
   crossorigin="anonymous"></script>
 </head>
 <body class="report-received">
+  <div class="loading-overlay">
+    <div class="loading-bro">
+  <h1>Laddar</h1>
+  <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
+    <circle id="loading-inner" cx="75" cy="75" r="60"/>
+ </svg>
+</div>
+  </div>
   <div class="container">
   <h1>Tack!</h1>
   <h3>Vi har tagit emot din anmälan och återkommer så fort vi kan!</h3>
@@ -46,6 +54,7 @@
     <img src="./images/logo_ahus.svg" alt="">
     <img class="hamburgerIcon" src="./images/menu_hamburger.svg" alt="">
   </div>
+  <script src="./js/loading.js" charset="utf-8"></script>
   <script src="./js/fetchReport.js" charset="utf-8"></script>
 </body>
 </html>

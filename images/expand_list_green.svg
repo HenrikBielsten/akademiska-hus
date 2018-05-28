@@ -15,7 +15,7 @@
                             <use xlink:href="#path-1"></use>
                         </mask>
                         <g fill-rule="nonzero"></g>
-                        <g id="✱-/-Color-/-Icons-/-Primary-or-Secondary" mask="url(#mask-2)" fill="#fff" fill-rule="evenodd">
+                        <g id="✱-/-Color-/-Icons-/-Primary-or-Secondary" mask="url(#mask-2)" fill="#00A388" fill-rule="evenodd">
                             <g id="✱-/-Color-/-Primary-/-Main">
                                 <g id="✱-/-Color-/-Primary-/-400">
                                     <rect id="Rectangle-13" x="0" y="0" width="20" height="24"></rect>

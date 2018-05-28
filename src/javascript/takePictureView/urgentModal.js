@@ -2,9 +2,9 @@ const urgentIconSmall = document.querySelector('.urgentIconSmall');
 const urgentModalContainer = document.querySelector('.urgentModalContainer');
 const urgentModal = document.querySelector('.urgentModal');
 const modalOverlay = document.querySelector('.modalOverlay');
-const chooseAreaButton = document.querySelector('.urgentChooseArea');
+const chooseAreaButton = document.querySelector('.chooseCampus');
 const closeUrgentModalButton = document.querySelector('.closeUrgentModalIcon');
-const contentContainer = document.querySelector('.urgentChooseArea .wrapper .content');
+const contentContainer = document.querySelector('.chooseCampus .wrapper .content');
 
 
 urgentIconSmall.addEventListener("click", (e) => {
@@ -30,7 +30,7 @@ closeUrgentModalButton.addEventListener("click", (e) => {
 })
 
 
-$('.urgentChooseArea .wrapper .parent').click(function(){
+$('.chooseCampus .wrapper .parent').click(function(){
 
   $(chooseAreaButton).toggleClass('top',400);
   $(contentContainer).toggleClass('active');

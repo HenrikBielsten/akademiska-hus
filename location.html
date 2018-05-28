@@ -5,9 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Akademiska Hus - Felanmälning</title>
   <link rel="stylesheet" href="css/app.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+  crossorigin="anonymous"></script>
 
 </head>
 <body>
+  <div class="loading-overlay">
+    <div class="loading-bro">
+  <h1>Laddar</h1>
+  <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
+    <circle id="loading-inner" cx="75" cy="75" r="60"/>
+ </svg>
+</div>
+  </div>
 
   <div class="map">
 
@@ -35,13 +51,61 @@
       Stämmer det inte kan du välja campus och byggnad i listan nedan.
     </div>
 
-    <div class="chooseCampus">
+      <div class="chooseCampus bottom">
+        <div class="wrapper">
+          <div class="content">
+              <ul>
+                <li><span class="campus_name">Alnarp</span></li>
+                <li><span class="campus_name">Fiskebackskil</span></li>
+                <li><span class="campus_name">Grythyttan</span></li>
+                <li><span class="campus_name">Gävle</span></li>
+                <li><span class="campus_name">Göteborg</span></li>
+                <li><span class="campus_name">Karlstad</span></li>
+                <li><span class="campus_name">Kristianstad</span></li>
+                <li><span class="campus_name">Linköping	</span></li>
+                <li><span class="campus_name">Luleå</span></li>
+                <li><span class="campus_name">Lund</span></li>
+                <li><span class="campus_name">Malmö</span></li>
+                <li><span class="campus_name">Norrköping</span></li>
+                <li><span class="campus_name">Skövde</span></li>
+                <li><span class="campus_name">Stockholm</span></li>
+                <li><span class="campus_name">Umeå</span></li>
+                <li><span class="campus_name">Uppsala</span></li>
+                <li><span class="campus_name">Örebro</span></li>
 
-    </div>
+              </ul>
+          </div>
+              <div class="parent"><p>Campus</p><span class="expand-icon"><img src="./images/expand_list.svg" alt=""></span></div>
+        </div>
+      </div>
 
-    <div class="chooseBuilding">
+      <div class="chooseBuilding bottom">
+        <div class="wrapper">
+          <div class="content">
+              <ul>
+                <a href="#"><li><span class="campus_name">Alnarp</span></li></a>
+                <a href="#"><li><span class="campus_name">Fiskebackskil</span></li></a>
+                <a href="#"><li><span class="campus_name">Grythyttan</span></li></a>
+                <a href="#"><li><span class="campus_name">Gävle</span></li></a>
+                <a href="#"><li><span class="campus_name">Göteborg</span></li></a>
+                <a href="#"><li><span class="campus_name">Karlstad</span></li></a>
+                <a href="#"><li><span class="campus_name">Kristianstad</span></li></a>
+                <a href="#"><li><span class="campus_name">Linköping	</span></li></a>
+                <a href="#"><li><span class="campus_name">Luleå</span></li></a>
+                <a href="#"><li><span class="campus_name">Lund</span></li></a>
+                <a href="#"><li><span class="campus_name">Malmö</span></li></a>
+                <a href="#"><li><span class="campus_name">Norrköping</span></li></a>
+                <a href="#"><li><span class="campus_name">Skövde</span></li></a>
+                <a href="#"><li><span class="campus_name">Stockholm</span></li></a>
+                <a href="#"><li><span class="campus_name">Umeå</span></li></a>
+                <a href="#"><li><span class="campus_name">Uppsala</span></li></a>
+                <a href="#"><li><span class="campus_name">Örebro</span></li></a>
 
-    </div>
+              </ul>
+          </div>
+              <div class="parent"><p>Byggnad</p><span class="expand-icon"><img src="./images/expand_list.svg" alt=""></span></div>
+        </div>
+      </div>
 
     <div class="forwardsBackwardsContainer">
 
@@ -81,10 +145,11 @@
   </div>
 
 </body>
-
+<script src="js/loading.js" charset="utf-8"></script>
 <script src="js/fetchBuilding.js"></script>
 <script src="js/locationHandler.js"></script>
 <script src="js/map.js"></script>
 <script src="js/hamburgerMenu2.js"></script>
+<script src="js/choices.js"></script>
 
 </html>

@@ -37,6 +37,7 @@ class ProblemReportsController extends Controller
 
         $problemReport->report_id = $request->input('report_id');
         $problemReport->user_id = $request->input('user_id');
+        $problemReport->building_id = $request->input('building_id');
         $problemReport->status = $request->input('status');
         $problemReport->name = $request->input('name');
         $problemReport->phone = $request->input('phone');
@@ -47,6 +48,7 @@ class ProblemReportsController extends Controller
         $problemReport->image_2 = $request->input('image_2');
         $problemReport->image_3 = $request->input('image_3');
         $problemReport->image_4 = $request->input('image_4');
+        $problemReport->created_at = $request->input('created_at');
 
 
         if ($problemReport->save()) {
