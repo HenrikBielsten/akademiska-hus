@@ -5,6 +5,7 @@ const modalOverlay = document.querySelector('.modalOverlay');
 const chooseAreaButton = document.querySelector('.chooseCampus');
 const closeUrgentModalButton = document.querySelector('.closeUrgentModalIcon');
 const contentContainer = document.querySelector('.chooseCampus .wrapper .content');
+const container = document.querySelector('.container');
 
 
 urgentIconSmall.addEventListener("click", (e) => {
