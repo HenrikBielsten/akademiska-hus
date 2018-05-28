@@ -19,9 +19,12 @@
 		padding: 0 5vw;
 	}
 
-	.chooseBuilding.top,
 	.chooseCampus.top {
 		top: 18%;
+	}
+
+	.chooseBuilding.top {
+		top: 33%;
 	}
 
 	.chooseBuilding,
@@ -155,9 +158,10 @@
 
 	.chooseBuilding {
 		bottom: 22%;
+		z-index: 999;
 
 		.content.active {
-			max-height: 55vh;
+			max-height: 40vh;
 		}
 	}
 

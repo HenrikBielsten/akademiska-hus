@@ -47,5 +47,3 @@ export function fetchBuilding() {
 
   })
 }
-
-console.log(localStorage.img);

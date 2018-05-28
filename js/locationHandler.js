@@ -123,8 +123,6 @@ function fetchBuilding() {
   });
 }
 
-console.log(localStorage.img);
-
 /***/ }),
 
 /***/ 15:
@@ -141,6 +139,8 @@ module.exports = __webpack_require__(16);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__ = __webpack_require__(0);
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(function (returnedBuilding) {
@@ -151,6 +151,30 @@ Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(
     document.querySelector(".popupCampus").innerHTML = 'Campus: ' + returnedBuilding['campus'];
     document.querySelector(".popupBuilding").innerHTML = 'Byggnad: ' + returnedBuilding['building_name'];
 });
+
+function fetchBuildings() {
+    return fetch('http://localhost:8888/api/buildings').then(function (response) {
+        return response.json();
+    }).then(function (data) {
+
+        var resultCampus = [].concat(_toConsumableArray(new Set(data.data.map(function (o) {
+            return o.campus;
+        }))));
+
+        jQuery.each(resultCampus, function (index, item) {
+            $(".chooseCampus .wrapper .content ul").append("<li><span class='campus_name'>" + this + "</span></li>");
+        });
+
+        // jQuery.each(data.data, function(index, item) {
+        //
+        //     if (this['campus'] == $(".chooseCampus .wrapper .parent").text()) {
+        //     console.log(this['building_name']);
+        //     }
+        // });
+
+    });
+}
+fetchBuildings();
 
 /***/ })
 

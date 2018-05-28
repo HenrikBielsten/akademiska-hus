@@ -18,7 +18,7 @@ class BuildingsController extends Controller
     public function index()
     {
         //
-        $building = Building::paginate(0);
+        $building = Building::paginate(99999);
 
         return BuildingsResource::collection($building);
     }
