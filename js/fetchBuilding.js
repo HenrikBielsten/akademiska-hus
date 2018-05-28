@@ -123,8 +123,6 @@ function fetchBuilding() {
   });
 }
 
-console.log(localStorage.img);
-
 /***/ }),
 
 /***/ 14:

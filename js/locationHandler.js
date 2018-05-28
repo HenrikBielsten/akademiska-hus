@@ -123,8 +123,6 @@ function fetchBuilding() {
   });
 }
 
-console.log(localStorage.img);
-
 /***/ }),
 
 /***/ 15:
@@ -148,8 +146,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(
     document.getElementById("campus").innerHTML = returnedBuilding['campus'];
     document.getElementById("building").innerHTML = returnedBuilding['building_name'];
     document.querySelector(".popupAdress").innerHTML = returnedBuilding['building_address'];
-    document.querySelector(".popupCampus").innerHTML = 'Campus: ' + returnedBuilding['campus'];
-    document.querySelector(".popupBuilding").innerHTML = 'Byggnad: ' + returnedBuilding['building_name'];
+    document.querySelector(".popupCampus").innerHTML = returnedBuilding['campus'];
+    document.querySelector(".popupBuilding").innerHTML = returnedBuilding['building_name'];
 });
 
 /***/ })

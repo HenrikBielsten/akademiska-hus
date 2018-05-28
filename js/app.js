@@ -242,7 +242,6 @@ var latitude = "";
 var longitude = "";
 
 var output = document.getElementById("out");
-
 var button = document.querySelector('.fileSelect');
 
 function success(position) {
@@ -251,6 +250,8 @@ function success(position) {
 
   localStorage.setItem('longitude', longitude);
   localStorage.setItem('latitude', latitude);
+
+  console.log(latitude + ', ' + longitude);
 }
 
 function error() {
@@ -294,10 +295,9 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 var filesArray = [];
 
-console.log('img1: ' + localStorage.img1);
-console.log('img2: ' + localStorage.img2);
-console.log('img3: ' + localStorage.img3);
-console.log('img4: ' + localStorage.img4);
+if (localStorage.images) {
+  filesArray = JSON.parse(localStorage.getItem('images'));
+}
 
 if (filesArray.length < 4) {
   fileSelect.addEventListener("click", function (e) {
@@ -345,7 +345,7 @@ function handleFiles(evt) {
           var data = __WEBPACK_IMPORTED_MODULE_0_resize_image___default.a.resize(img, 200, 100, __WEBPACK_IMPORTED_MODULE_0_resize_image___default.a.JPEG);
           var resized = new Image();
           resized.classList.add('selectedImage');
-          resized.src = data; // local image url
+          resized.src = data;
           imgDiv.appendChild(resized);
 
           var encodedData = __WEBPACK_IMPORTED_MODULE_1_base_64___default.a.encode(data);
@@ -359,35 +359,20 @@ function handleFiles(evt) {
 
           $('.single-item').slick(getSliderSettings());
 
-          if (!localStorage.img1) {
-            localStorage.setItem('img1', encodedData);
-          }
+          filesArray.push(encodedData);
 
-          if (localStorage.img1 && !localStorage.img2) {
-            localStorage.setItem('img2', encodedData);
-          }
+          console.log(filesArray);
 
-          if (localStorage.img1 && localStorage.img2 && !localStorage.img3) {
-            localStorage.setItem('img3', encodedData);
-          }
+          localStorage.setItem('images', JSON.stringify(filesArray));
 
-          if (localStorage.img1 && localStorage.img2 && localStorage.img3 && !localStorage.img4) {
-            localStorage.setItem('img4', encodedData);
-          }
+          console.log('images: ' + localStorage.images);
         };
-
-        console.log('img1: ' + localStorage.img1);
-        console.log('img2: ' + localStorage.img2);
-        console.log('img3: ' + localStorage.img3);
-        console.log('img4: ' + localStorage.img4);
 
         info.style.display = 'none';
         instructions.style.display = 'none';
         $(".single-item").show();
       };
     }(f);
-
-    filesArray.push(imgDiv);
 
     if (filesArray.length >= 1) {
       continueButton.style.pointerEvents = 'all';
@@ -404,28 +389,54 @@ function handleFiles(evt) {
   }
 }
 
-// If there are images in localstorage we display them
-
 document.querySelector('.fileElem').addEventListener('change', handleFiles, false);
 
-if (localStorage.img) {
+// If there are images in localstorage we display them
+
+if (localStorage.images) {
 
   info.style.display = 'none';
   instructions.style.display = 'none';
 
-  var imgDiv = document.createElement('div');
-  imgDiv.innerHTML += ['<img class="selectedImage" src="', localStorage.img, '" title="test"/>'].join('');
+  for (var i = 0, f; f = filesArray[i]; i++) {
 
-  document.querySelector('.imagePreview').insertBefore(imgDiv, null);
+    // function getSliderSettings(){
+    //   return {
+    //     dots: true
+    //   }
+    // }
 
-  if (filesArray.length >= 1) {
-    continueButton.style.pointerEvents = 'all';
-    continueIcon.style.opacity = '1';
-  }
+    var decodedData = __WEBPACK_IMPORTED_MODULE_1_base_64___default.a.decode(filesArray[i]);
 
-  if (filesArray.length >= 4) {
-    fileSelect.style.pointerEvents = "none";
-    fileSelect.style.opacity = '0.45';
+    var imgDiv = document.createElement('div');
+    // var img = document.createElement('img');
+    //
+    // img.classList.add('selectedImage');
+    // img.src = decodedData;
+    // imgDiv.appendChild(img);
+    //
+    // $(".single-item").append(imgDiv);
+    //
+    // $('.single-item').slick('unslick');
+    // $(".single-item").append(imgDiv);
+    //
+    // $('.single-item').slick(getSliderSettings());
+    //
+    // $(".single-item").show();
+
+    imgDiv.innerHTML += ['<img class="selectedImage" src="', decodedData, '" title="test"/>'].join('');
+
+    document.querySelector('.imagePreview').insertBefore(imgDiv, null);
+
+    if (filesArray.length >= 1) {
+      continueButton.style.pointerEvents = 'all';
+      continueIcon.style.opacity = '1';
+    }
+
+    if (filesArray.length >= 4) {
+      fileSelect.style.pointerEvents = "none";
+      fileSelect.style.opacity = '0.45';
+    }
   }
 }
 
@@ -815,16 +826,17 @@ $('.chooseCampus .wrapper .parent').click(function () {
 /* 11 */
 /***/ (function(module, exports) {
 
-var locationText2 = document.querySelector('.locationText-2');
-var continueButton = document.querySelector('.continueButton');
-
-continueButton.addEventListener("click", function (e) {
-
-  localStorage.setItem("latitude", latitude);
-  localStorage.setItem("longitude", longitude);
-
-  console.log(filesArray);
-});
+// const locationText2 = document.querySelector('.locationText-2');
+// const continueButton = document.querySelector('.continueButton');
+//
+//
+// continueButton.addEventListener("click", (e) => {
+//
+//   localStorage.setItem("latitude", latitude);
+//   localStorage.setItem("longitude", longitude);
+//
+//   console.log(filesArray);
+// })
 
 /***/ }),
 /* 12 */

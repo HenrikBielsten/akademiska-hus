@@ -2,7 +2,6 @@ var latitude = "";
 var longitude = "";
 
 const output = document.getElementById("out");
-
 const button = document.querySelector('.fileSelect');
 
 function success(position) {
@@ -11,10 +10,13 @@ function success(position) {
 
   localStorage.setItem('longitude', longitude)
   localStorage.setItem('latitude', latitude)
+
+  console.log(latitude + ', ' + longitude);
 }
 
 function error() {
   output.innerHTML = "Unable to retrieve your location";
+
 }
 
 button.addEventListener('click', function () {
