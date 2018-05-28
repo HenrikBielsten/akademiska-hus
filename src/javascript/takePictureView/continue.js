@@ -1,4 +1,5 @@
 const locationText2 = document.querySelector('.locationText-2');
+const continueButton = document.querySelector('.continueButton');
 
 
 continueButton.addEventListener("click", (e) => {

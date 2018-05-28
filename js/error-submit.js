@@ -60,12 +60,20 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 10:
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(17);
+
+
+/***/ }),
+
+/***/ 17:
 /***/ (function(module, exports) {
 
 document.getElementById('reportForm').addEventListener('submit', postData);
@@ -103,14 +111,6 @@ function postData(event) {
 
            window.location.href = "report-received.html";
 }
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(10);
-
 
 /***/ })
 

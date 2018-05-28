@@ -25,15 +25,6 @@ mix.disableSuccessNotifications();
     .js('src/javascript/report/my-reports.js', 'js/')
     .sass('src/sass/app.scss', 'css/app.css');
 
-    mix.combine([
-      'src/javascript/takePictureView/infoArrow.js',
-      'src/javascript/takePictureView/geolocation.js',
-      'src/javascript/takePictureView/addFiles.js',
-      'src/javascript/takePictureView/urgentModal.js',
-      'src/javascript/takePictureView/continue.js',
-      'src/javascript/takePictureView/hamburgerMenu.js'
-    ], 'js/app.js');
-
     mix.options({
       processCssUrls: false // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
     });
