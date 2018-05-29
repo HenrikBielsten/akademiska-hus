@@ -407,12 +407,16 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 // Displays a message if you choose too many files
 function tooMany() {
+  tooManyContainer.style.display = 'flex';
   $(tooManyContainer).animate({ top: '-2vh' }, 'fast');
 };
 
 // Animates the message out of view agian on next page interaction
 $(window).click(function (e) {
   $(tooManyContainer).animate({ top: '-21vh' }, 'fast');
+  setTimeout(function () {
+    tooManyContainer.style.display = 'none';
+  }, 200);
 });
 
 var filesArray = [];
@@ -730,6 +734,7 @@ $(hamburger).click(function () {
 
   $(hamburgerMenu).animate({ right: '0vw' }, "fast");
 
+  hamburgerMenu.style.display = 'flex';
   hamburger.style.display = 'none';
   hamburgerClose.style.display = 'block';
 });
@@ -737,6 +742,10 @@ $(hamburger).click(function () {
 $(hamburgerClose).click(function () {
 
   $(hamburgerMenu).animate({ right: '-100vw' }, "fast");
+
+  setTimeout(function () {
+    hamburgerMenu.style.display = 'none';
+  }, 200);
 
   hamburger.style.display = 'block';
   hamburgerClose.style.display = 'none';

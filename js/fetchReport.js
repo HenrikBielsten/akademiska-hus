@@ -77,6 +77,7 @@ module.exports = __webpack_require__(33);
 /***/ (function(module, exports) {
 
 var buildingId = 1;
+var newReportButton = document.querySelector('.newReportButton');
 
 function fetchReport() {
 
@@ -115,6 +116,10 @@ function fetchReport() {
 }
 
 fetchReport();
+
+$(newReportButton).click(function () {
+  window.location.href = 'index.html';
+});
 
 /***/ })
 
