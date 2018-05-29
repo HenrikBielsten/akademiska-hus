@@ -109,6 +109,7 @@ function fetchReport() {
 
       document.getElementById("address").innerHTML = returnedBuilding['building_address'];
       document.getElementById("building").innerHTML = returnedBuilding['building_name'];
+      document.getElementById("campus").innerHTML = returnedBuilding['campus'];
     });
   });
 }
