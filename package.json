@@ -29,6 +29,7 @@
   "dependencies": {
     "base-64": "^0.1.0",
     "google-maps": "^3.3.0",
+    "npm": "^6.1.0",
     "resize-image": "^0.1.0",
     "resize-img": "^1.1.2"
   }
