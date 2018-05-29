@@ -31,6 +31,7 @@ let returnedBuilding = data.data.find(x => x.id === buildingId);
 
 document.getElementById("address").innerHTML = returnedBuilding['building_address'];
 document.getElementById("building").innerHTML = returnedBuilding['building_name'];
+document.getElementById("campus").innerHTML = returnedBuilding['campus'];
 
 
 
