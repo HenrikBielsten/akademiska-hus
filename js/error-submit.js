@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -329,11 +329,11 @@ function postData(event) {
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)(module), __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module), __webpack_require__(3)))
 
 /***/ }),
 
-/***/ 8:
+/***/ 2:
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -362,7 +362,103 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 9:
+/***/ 20:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(21);
+
+
+/***/ }),
+
+/***/ 21:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_base_64__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_base_64___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_base_64__);
+
+document.getElementById('reportForm').addEventListener('submit', postData);
+
+function postData(event) {
+  event.preventDefault();
+
+  var name = document.getElementById('name').value;
+  var phone = document.getElementById('phone').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+  var user_id = 1;
+
+  var filesArray = [];
+
+  if (localStorage.images) {
+    filesArray = JSON.parse(localStorage.getItem('images'));
+  }
+
+  var $counter = 0;
+  var imgArray = {};
+
+  $.each(filesArray, function (index, value) {
+
+    $counter += 1;
+    imgArray["image" + $counter] = this;
+  });
+
+  var image1 = "";
+  var image2 = "";
+  var image3 = "";
+  var image4 = "";
+
+  if (imgArray['image1']) {
+    image1 = __WEBPACK_IMPORTED_MODULE_0_base_64___default.a.decode(imgArray['image1']);
+  }
+  if (imgArray['image2']) {
+    image2 = __WEBPACK_IMPORTED_MODULE_0_base_64___default.a.decode(imgArray['image2']);
+  }
+  if (imgArray['image3']) {
+    image3 = __WEBPACK_IMPORTED_MODULE_0_base_64___default.a.decode(imgArray['image3']);
+  }
+  if (imgArray['image4']) {
+    image4 = __WEBPACK_IMPORTED_MODULE_0_base_64___default.a.decode(imgArray['image4']);
+  }
+
+  if (!name || !phone || !email || !message) {
+    return false;
+  }
+
+  var reqBody = {
+    user_id: user_id,
+    name: name,
+    phone: phone,
+    email: email,
+    message: message,
+    image_1: image1,
+    image_2: image2,
+    image_3: image3,
+    image_4: image4
+  };
+
+  fetch('http://localhost:8888/api/problem_report', {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(reqBody)
+  }).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    return console.log(data);
+  }).catch(function (err) {
+    return console.log(err);
+  });
+
+  //     setTimeout(function() {
+  //   window.location.href = "report-received.html";
+  // }, 1000);
+
+}
+
+/***/ }),
+
+/***/ 3:
 /***/ (function(module, exports) {
 
 var g;
