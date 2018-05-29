@@ -79,7 +79,7 @@ function handleFiles(evt) {
           img.onload= function () {
 
             // Resize the image
-            var data = resizeImage.resize(img, 414, 736, resizeImage.JPEG);
+            var data = resizeImage.resize(img, 375, 667, resizeImage.JPEG);
             var resized = new Image();
             resized.classList.add('selectedImage');
             resized.src = data;
@@ -101,11 +101,6 @@ function handleFiles(evt) {
 
             // Takes the filesArray and creates a string of it. Then saves the string in localStorage.
             localStorage.setItem('images', JSON.stringify(filesArray));
-
-            if (filesArray.length >= 1) {
-              continueButton.style.pointerEvents = 'all';
-              continueIcon.style.opacity = '1';
-            }
 
             if (filesArray.length >= 4) {
               fileSelect.style.pointerEvents = "none";
@@ -155,7 +150,7 @@ if (localStorage.images) {
     $(".single-item").append(imgDiv);
     $(".single-item").show();
 
-    if (filesArray.length >= 1) {
+    if (filesArray.length >= 1 && localStorage.latitude) {
       continueButton.style.pointerEvents = 'all';
       continueIcon.style.opacity = '1';
     }
