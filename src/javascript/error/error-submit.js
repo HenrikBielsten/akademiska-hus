@@ -10,6 +10,7 @@ document.getElementById('reportForm').addEventListener('submit', postData);
             let email = document.getElementById('email').value;
             let message = document.getElementById('message').value;
             let user_id = 1;
+            let defaultStatus = "I kö";
 
             var filesArray = [];
 
@@ -60,6 +61,7 @@ document.getElementById('reportForm').addEventListener('submit', postData);
             let reqBody = {
               user_id: user_id,
               building_id: building_id,
+              status: defaultStatus,
               name: name,
               phone: phone,
               email: email,
