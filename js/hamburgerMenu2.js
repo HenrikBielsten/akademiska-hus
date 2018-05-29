@@ -81,7 +81,6 @@ var hamburger2 = document.querySelector('.hamburger2');
 var hamburgerClose2 = document.querySelector('.hamburgerClose2');
 
 hamburger2.addEventListener('click', function (e) {
-
   hamburgerMenu2.style.bottom = '0vh';
 });
 

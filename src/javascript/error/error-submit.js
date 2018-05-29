@@ -16,6 +16,11 @@ document.getElementById('reportForm').addEventListener('submit', postData);
             if (localStorage.images) {
               filesArray = JSON.parse(localStorage.getItem('images'));
             }
+            var building_id = "";
+            if (localStorage.building_id) {
+              building_id = localStorage.getItem('building_id');
+              console.log("exist");
+            }
 
             var $counter= 0;
             var imgArray = {};
@@ -54,6 +59,7 @@ document.getElementById('reportForm').addEventListener('submit', postData);
 
             let reqBody = {
               user_id: user_id,
+              building_id: building_id,
               name: name,
               phone: phone,
               email: email,
