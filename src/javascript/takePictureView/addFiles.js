@@ -15,6 +15,8 @@ var fileSelect = document.querySelector(".fileSelect"),
     instructions = document.querySelector(".instructions"),
     tooManyContainer = document.querySelector('.tooManyContainer');
 
+      console.log(localStorage.latitude + ', ' + localStorage.longitude);
+
 // Displays a message if you choose too many files
 function tooMany() {
   tooManyContainer.style.display = 'flex';
@@ -105,6 +107,11 @@ function handleFiles(evt) {
             if (filesArray.length >= 4) {
               fileSelect.style.pointerEvents = "none";
               fileSelect.style.opacity = '0.45';
+            }
+
+            if (filesArray.length >= 1 && localStorage.latitude) {
+              continueButton.style.pointerEvents = 'all';
+              continueIcon.style.opacity = '1';
             }
 
           };

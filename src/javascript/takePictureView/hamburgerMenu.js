@@ -6,19 +6,17 @@ $(hamburger).click(function() {
 
     $(hamburgerMenu).animate({right: '0vw'}, "fast");
 
-    hamburgerMenu.style.display = 'flex';
-    hamburger.style.display = 'none';
-    hamburgerClose.style.display = 'block';
+    $(hamburgerMenu).show().css('display', 'flex');
+    $(hamburger).hide(0);
+    $(hamburgerClose).show().css('display', 'block');
 });
 
 $(hamburgerClose).click(function() {
 
   $(hamburgerMenu).animate({right: '-100vw'}, "fast");
 
-  setTimeout(function () {
-    hamburgerMenu.style.display = 'none';
-  }, 200);
+  $(hamburgerMenu).delay(200).hide(0);
 
-  hamburger.style.display = 'block';
-  hamburgerClose.style.display = 'none';
+  $(hamburger).show().css('display', 'block');
+  $(hamburgerClose).show().css('display', 'none');
 });
