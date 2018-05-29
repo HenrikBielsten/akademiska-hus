@@ -75,9 +75,9 @@ document.getElementById('reportForm').addEventListener('submit', postData);
 
 
 
-            setTimeout(function() {
-          window.location.href = "report-received.html";
-        }, 1000);
+        //     setTimeout(function() {
+        //   window.location.href = "report-received.html";
+        // }, 1000);
 
 
 

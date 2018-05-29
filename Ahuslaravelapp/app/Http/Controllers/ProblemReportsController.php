@@ -35,6 +35,18 @@ class ProblemReportsController extends Controller
         $problemReport = $request->IsMethod('put') ? ProblemReport::findOrFail
         ($request->report_id) : new ProblemReport;
 
+        date_default_timezone_set("Europe/Stockholm");
+        $problemReport->created_at = date("Y-m-d H:i:s");
+
+        $cleanDate = str_replace(' ', '-', $problemReport->created_at);
+
+
+        if (!is_dir('../uploads/' . $request->input('user_id'))) {
+            // dir doesn't exist, make it
+            mkdir('../uploads/' . $request->input('user_id'));
+        }
+
+
         if (!empty($request->input('image_1'))) {
             $data = $request->input('image_1');
 
@@ -42,8 +54,8 @@ class ProblemReportsController extends Controller
             list(, $data)      = explode(',', $data);
             $data = base64_decode($data);
 
-            file_put_contents('../uploads/image1-'. $request->input('user_id') .'.png', $data);
-            $problemReport->image_1 = '/uploads/image1-'. $request->input('user_id') .'.png';
+            file_put_contents('../uploads/' . $request->input('user_id') .'/image1-'. $cleanDate .'.png', $data);
+            $problemReport->image_1 = '/uploads/' . $request->input('user_id') .'/image1-'. $cleanDate .'.png';
         }
         if (!empty($request->input('image_2'))) {
             $data = $request->input('image_2');
@@ -52,8 +64,8 @@ class ProblemReportsController extends Controller
             list(, $data)      = explode(',', $data);
             $data = base64_decode($data);
 
-            file_put_contents('../uploads/image2-'. $request->input('user_id') .'.png', $data);
-            $problemReport->image_2 = '/uploads/image2-'. $request->input('user_id') .'.png';
+            file_put_contents('../uploads/' . $request->input('user_id') .'/image2-'. $cleanDate .'.png', $data);
+            $problemReport->image_2 = '/uploads/' . $request->input('user_id') .'/image2-'. $cleanDate .'.png';
         }
         if (!empty($request->input('image_3'))) {
             $data = $request->input('image_3');
@@ -62,8 +74,8 @@ class ProblemReportsController extends Controller
             list(, $data)      = explode(',', $data);
             $data = base64_decode($data);
 
-            file_put_contents('../uploads/image3-'. $request->input('user_id') .'.png', $data);
-            $problemReport->image_3 = '/uploads/image3-'. $request->input('user_id') .'.png';
+            file_put_contents('../uploads/' . $request->input('user_id') .'/image3-'. $cleanDate .'.png', $data);
+            $problemReport->image_3 = '/uploads/' . $request->input('user_id') .'/image3-'. $cleanDate .'.png';
         }
         if (!empty($request->input('image_4'))) {
             $data = $request->input('image_4');
@@ -72,11 +84,11 @@ class ProblemReportsController extends Controller
             list(, $data)      = explode(',', $data);
             $data = base64_decode($data);
 
-            file_put_contents('../uploads/image4-'. $request->input('user_id') .'.png', $data);
-            $problemReport->image_4 = '/uploads/image4-'. $request->input('user_id') .'.png';
+            file_put_contents('../uploads/' . $request->input('user_id') .'/image4-'. $cleanDate .'.png', $data);
+            $problemReport->image_4 = '/uploads/' . $request->input('user_id') .'/image4-'. $cleanDate .'.png';
         }
 
-        $problemReport->report_id = $request->input('report_id');
+        // $problemReport->report_id = $request->input('report_id');
         $problemReport->user_id = $request->input('user_id');
         $problemReport->building_id = $request->input('building_id');
         $problemReport->status = $request->input('status');
@@ -89,7 +101,7 @@ class ProblemReportsController extends Controller
         // $problemReport->image_2 = $request->input('image_2');
         // $problemReport->image_3 = $request->input('image_3');
         // $problemReport->image_4 = $request->input('image_4');
-        $problemReport->created_at = $request->input('created_at');
+        // $problemReport->created_at = $request->input('created_at');
 
 
 
