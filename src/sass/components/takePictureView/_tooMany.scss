@@ -9,22 +9,30 @@
   z-index: 5000;
 
   .tooMany {
-    height: 20vh;
+    height: 21vh;
     width: 90vw;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     background: $primary;
     color: white;
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 4px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
     padding: 3vh;
     text-align: center;
 
+    h1 {
+      font-family: 'scene';
+      letter-spacing: 3px;
+      line-height: 26px;
+      font-weight: normal;
+    }
+
     p {
       font-family: Arial;
-      font-size: 16px;
+      font-size: 19px;
       line-height: 20px;
       margin: 0;
     }

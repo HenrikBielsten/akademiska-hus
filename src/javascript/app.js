@@ -1,4 +1,3 @@
-import './takePictureView/tooMany.js';
 import './takePictureView/infoArrow.js';
 import './takePictureView/geolocation.js';
 import './takePictureView/addFiles.js';

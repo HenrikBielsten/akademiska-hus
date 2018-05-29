@@ -60,12 +60,57 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 0:
+/***/ 17:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(18);
+
+
+/***/ }),
+
+/***/ 18:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__ = __webpack_require__(3);
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(function (returnedBuilding) {
+
+    document.getElementById("campus").innerHTML = returnedBuilding['campus'];
+    document.getElementById("building").innerHTML = returnedBuilding['building_name'];
+    document.querySelector(".popupAdress").innerHTML = returnedBuilding['building_address'];
+    document.querySelector(".popupCampus").innerHTML = returnedBuilding['campus'];
+    document.querySelector(".popupBuilding").innerHTML = returnedBuilding['building_name'];
+});
+
+function fetchBuildings() {
+    return fetch('http://localhost:8888/api/buildings').then(function (response) {
+        return response.json();
+    }).then(function (data) {
+
+        var resultCampus = [].concat(_toConsumableArray(new Set(data.data.map(function (o) {
+            return o.campus;
+        }))));
+
+        jQuery.each(resultCampus, function (index, item) {
+            $(".chooseCampus .wrapper .content ul").append("<li><span class='campus_name'>" + this + "</span></li>");
+        });
+    });
+}
+fetchBuildings();
+
+/***/ }),
+
+/***/ 3:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -122,51 +167,6 @@ function fetchBuilding() {
     return returnedBuilding;
   });
 }
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(17);
-
-
-/***/ }),
-
-/***/ 17:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__ = __webpack_require__(0);
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(function (returnedBuilding) {
-
-    document.getElementById("campus").innerHTML = returnedBuilding['campus'];
-    document.getElementById("building").innerHTML = returnedBuilding['building_name'];
-    document.querySelector(".popupAdress").innerHTML = returnedBuilding['building_address'];
-    document.querySelector(".popupCampus").innerHTML = returnedBuilding['campus'];
-    document.querySelector(".popupBuilding").innerHTML = returnedBuilding['building_name'];
-});
-
-function fetchBuildings() {
-    return fetch('http://localhost:8888/api/buildings').then(function (response) {
-        return response.json();
-    }).then(function (data) {
-
-        var resultCampus = [].concat(_toConsumableArray(new Set(data.data.map(function (o) {
-            return o.campus;
-        }))));
-
-        jQuery.each(resultCampus, function (index, item) {
-            $(".chooseCampus .wrapper .content ul").append("<li><span class='campus_name'>" + this + "</span></li>");
-        });
-    });
-}
-fetchBuildings();
 
 /***/ })
 

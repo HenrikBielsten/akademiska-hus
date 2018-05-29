@@ -17,7 +17,7 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 // Displays a message if you choose too many files
 function tooMany() {
-  $(tooManyContainer).animate({top: '-6vh'}, 'fast');
+  $(tooManyContainer).animate({top: '-2vh'}, 'fast');
 };
 
 // Animates the message out of view agian on next page interaction
