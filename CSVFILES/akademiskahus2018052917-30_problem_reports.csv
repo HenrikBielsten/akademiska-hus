@@ -1,0 +1,5 @@
+report_id,user_id,building_id,"status","name","phone","email","geolocation","message","image_1","image_2","image_3","image_4","created_at","updated_at"
+2,1,1,"Färdig","Filip Petersson","0768760785","Fpetersson96@gmail.com","57.7059374,11.9341938","Ventilationen i WU17's klassrum funkar ej!",NULL,NULL,NULL,NULL,"2018-05-18 12:32:11","2018-05-18 12:37:06"
+18,1,1,"Pågående","Filip Petersson","0768760785","Fpetersson96@gmail.com",NULL,"rehrehreherherherh",NULL,NULL,NULL,NULL,"2018-05-25 11:49:46","2018-05-25 11:49:46"
+36,1,7,"I kö","Filip Petersson","0768760785","Fpetersson96@gmail.com",NULL,"egregerherherh","/uploads/image1-1.png","/uploads/image2-1.png","/uploads/image3-1.png",NULL,"2018-05-25 11:49:46","2018-05-29 00:10:03"
+53,1,NULL,NULL,"Harry Potter","46346","potter@gmail.com",NULL,"ewhwehweh","/uploads/1/image1-2018-05-29-14:23:43.png","/uploads/1/image2-2018-05-29-14:23:43.png","/uploads/1/image3-2018-05-29-14:23:43.png","/uploads/1/image4-2018-05-29-14:23:43.png","2018-05-29 14:23:43","2018-05-29 14:23:43"

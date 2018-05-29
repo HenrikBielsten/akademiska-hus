@@ -1,0 +1,2 @@
+id,role_id,"name","email","avatar","password","remember_token","settings","created_at","updated_at"
+1,1,"Filip Petersson","fpetersson96@gmail.com","users/May2018/NRnJ99ssCCqYkY4D1pPT.jpg","$2y$10$PE/RSIxAxQYHgx2McoC9meC2XEujaRCMFN.2SHbC9pZi9p1XChr/S","PR0kVOkIMjLVivLa3rj8CQiw4ZxDeUzsukiCFHCuspy6qCnt3shql5pH6Bej","{\"locale\":\"en\"}","2018-05-14 19:16:48","2018-05-14 19:22:32"
