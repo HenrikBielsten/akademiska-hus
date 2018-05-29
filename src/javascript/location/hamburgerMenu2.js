@@ -2,19 +2,16 @@ const hamburgerMenu2 = document.querySelector('.hamburgerMenu2');
 const hamburger2 = document.querySelector('.hamburger2');
 const hamburgerClose2 = document.querySelector('.hamburgerClose2');
 
-hamburger2.addEventListener('click', (e) => {
 
 
-    $(hamburgerMenu2).animate({bottom: '0vh'}, "fast");
-    hamburgerMenu2.style.display = 'flex';
+$(".hamburger2").click(function(){
+
+  $(hamburgerMenu2).show().css('display', 'flex');
+  $(hamburgerMenu2).animate({bottom: '0vh'});
 });
 
 $(hamburgerClose2).click(function() {
 
-  $(hamburgerMenu2).animate({bottom: '-44vh'}, "fast");
-  hamburgerMenu2.style.bottom = '-44vh';
-
-  setTimeout(function () {
-    hamburgerMenu2.style.display = 'none';
-  }, 500);
+  $(hamburgerMenu2).animate({bottom: '-44vh'});
+  $(hamburgerMenu2).delay(500).hide(0);
 });
