@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -125,15 +125,15 @@ function fetchBuilding() {
 
 /***/ }),
 
-/***/ 16:
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(17);
+module.exports = __webpack_require__(16);
 
 
 /***/ }),
 
-/***/ 17:
+/***/ 16:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -150,6 +150,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(
     document.querySelector(".popupAdress").innerHTML = returnedBuilding['building_address'];
     document.querySelector(".popupCampus").innerHTML = returnedBuilding['campus'];
     document.querySelector(".popupBuilding").innerHTML = returnedBuilding['building_name'];
+    localStorage.setItem('building_id', returnedBuilding['id']);
 });
 
 function fetchBuildings() {
