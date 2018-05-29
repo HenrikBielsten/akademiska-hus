@@ -18,7 +18,7 @@ if (localStorage.images) {
 
     // Creates the images and puts them in a nice slider
     var imgDiv = document.createElement('div');
-    imgDiv.innerHTML += ['<img class="selectedImageFull" src="', decodedData,
+    imgDiv.innerHTML += ['<img class="selectedImage" src="', decodedData,
     '" title="test"/>'].join('');
 
     $(".single-item").append(imgDiv);

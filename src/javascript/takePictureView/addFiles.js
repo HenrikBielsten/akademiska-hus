@@ -25,7 +25,7 @@ function tooMany() {
 $(window).click(function(e) {
   $(tooManyContainer).animate({top: '-21vh'}, 'fast');
   setTimeout(function () {
-    tooManyContainer.style.display = 'none';    
+    tooManyContainer.style.display = 'none';
   }, 200);
 });
 
@@ -103,6 +103,8 @@ function handleFiles(evt) {
             localStorage.setItem('images', JSON.stringify(filesArray));
 
             if (filesArray.length >= 1) {
+              continueButton.style.pointerEvents = 'all';
+              continueIcon.style.opacity = '1';
             }
 
             if (filesArray.length >= 4) {
@@ -153,7 +155,7 @@ if (localStorage.images) {
     $(".single-item").append(imgDiv);
     $(".single-item").show();
 
-    if (filesArray.length >= 1 && localStorage.latitude) {
+    if (filesArray.length >= 1) {
       continueButton.style.pointerEvents = 'all';
       continueIcon.style.opacity = '1';
     }

@@ -1,0 +1,14 @@
+id,menu_id,"title","url","target","icon_class","color",parent_id,order,"created_at","updated_at","route","parameters"
+1,1,"Dashboard","","_self","voyager-boat",NULL,NULL,1,"2018-05-14 19:15:44","2018-05-14 19:15:44","voyager.dashboard",NULL
+2,1,"Media","","_self","voyager-images",NULL,NULL,4,"2018-05-14 19:15:44","2018-05-14 20:32:36","voyager.media.index",NULL
+3,1,"Users","","_self","voyager-person",NULL,NULL,3,"2018-05-14 19:15:44","2018-05-14 19:15:44","voyager.users.index",NULL
+4,1,"Roles","","_self","voyager-lock",NULL,NULL,2,"2018-05-14 19:15:44","2018-05-14 19:15:44","voyager.roles.index",NULL
+5,1,"Tools","","_self","voyager-tools",NULL,NULL,5,"2018-05-14 19:15:44","2018-05-14 20:32:36",NULL,NULL
+6,1,"Menu Builder","","_self","voyager-list",NULL,5,1,"2018-05-14 19:15:44","2018-05-14 20:32:36","voyager.menus.index",NULL
+7,1,"Database","","_self","voyager-data",NULL,5,2,"2018-05-14 19:15:44","2018-05-14 20:32:36","voyager.database.index",NULL
+8,1,"Compass","","_self","voyager-compass",NULL,5,3,"2018-05-14 19:15:44","2018-05-14 20:32:36","voyager.compass.index",NULL
+9,1,"BREAD","","_self","voyager-bread",NULL,5,4,"2018-05-14 19:15:44","2018-05-14 20:32:36","voyager.bread.index",NULL
+10,1,"Settings","","_self","voyager-settings","#000000",NULL,6,"2018-05-14 19:15:44","2018-05-14 20:37:01","voyager.settings.index","null"
+11,1,"Hooks","","_self","voyager-hook",NULL,5,5,"2018-05-14 19:15:44","2018-05-14 20:32:36","voyager.hooks",NULL
+13,1,"Buildings","","_self","voyager-home",NULL,NULL,8,"2018-05-17 13:15:16","2018-05-17 13:15:16","voyager.buildings.index",NULL
+17,1,"Problem Reports","","_self","voyager-warning",NULL,NULL,9,"2018-05-18 12:41:14","2018-05-18 12:41:14","voyager.problem-reports.index",NULL
