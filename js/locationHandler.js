@@ -90,6 +90,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__fetchBuilding_js__["fetchBuilding"])().then(
     document.querySelector(".popupAdress").innerHTML = returnedBuilding['building_address'];
     document.querySelector(".popupCampus").innerHTML = returnedBuilding['campus'];
     document.querySelector(".popupBuilding").innerHTML = returnedBuilding['building_name'];
+    localStorage.setItem('building_id', returnedBuilding['id']);
 });
 
 function fetchBuildings() {

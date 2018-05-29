@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="93px" viewBox="0 0 65 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="9.28571429e-05 0 65 0 65 92.3684026 9.28571429e-05 92.3684026"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-212.000000, -105.000000)">
+            <g id="Group-2" transform="translate(80.000000, 79.000000)">
+                <g id="Group" transform="translate(132.000000, 26.000000)">
+                    <g id="Group-3">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M51.2611357,5.92726311 C45.9612214,2.194101 39.48815,-1.84736842e-05 32.5000929,-1.84736842e-05 C14.5506214,-1.84736842e-05 9.28571429e-05,14.4741131 9.28571429e-05,32.3289289 C9.28571429e-05,57.5684152 32.5000929,92.3684026 32.5000929,92.3684026 C32.5000929,92.3684026 65.0000929,56.2680526 65.0000929,32.3289289 C65.0000929,21.4255757 59.5738929,11.7828668 51.2611357,5.92726311" id="Fill-1" fill="#E2024A" mask="url(#mask-2)"></path>
+                    </g>
+                    <path d="M21.125,20.3125 L43.1289193,42.3164193" id="Stroke-4" stroke="#FEFEFE" stroke-width="6"></path>
+                    <path d="M43.1289193,20.3125 L21.125,42.3164193" id="Stroke-6" stroke="#FEFEFE" stroke-width="6"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -40,6 +40,13 @@ $('.chooseBuilding .wrapper .parent').click(function(){
 $(document).on('click', '.chooseCampus .wrapper .content ul li', function(){
   let choosenCampus = $(this).text();
     $('.chooseCampus .wrapper .parent p').text(choosenCampus);
+    $('.chooseBuilding .wrapper .parent p').text("Byggnad");
+    $(chooseAreaButton).toggleClass('top',400);
+    $(contentContainer).toggleClass("active");
+    $('.chooseCampus .wrapper .parent .expand-icon').toggleClass('active');
+
+
+    $('.chooseBuilding .wrapper .content ul').empty();
 
     fetch('http://localhost:8888/api/buildings')
     .then(response => response.json())
@@ -59,4 +66,21 @@ $(document).on('click', '.chooseBuilding .wrapper .content ul li', function(){
   let choosenBuilding = $(this).text();
 
     $('.chooseBuilding .wrapper .parent p').text(choosenBuilding);
+    $(".chooseBuilding").toggleClass('top',400);
+    $(".chooseBuilding .wrapper .content").toggleClass('active');
+    $('.chooseBuilding .wrapper .parent .expand-icon').toggleClass('active');
+
+    fetch('http://localhost:8888/api/buildings')
+    .then(response => response.json())
+    .then(data => {
+
+      jQuery.each(data.data, function(index, item) {
+        if (this['building_name'] == $(".chooseBuilding .wrapper .parent p").text()) {
+        localStorage.setItem('building_id', this['id']);
+        }
+      });
+
+    })
+
+
   });

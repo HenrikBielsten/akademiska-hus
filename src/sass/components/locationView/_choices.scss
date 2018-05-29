@@ -30,12 +30,12 @@
 	.chooseBuilding,
 	.chooseCampus {
 		position: absolute;
-		height: 5%;
+		height: 7%;
 		pointer-events: visible;
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		bottom: 28%;
+		bottom: 27%;
 
 		.wrapper {
 			display: inline-block;
@@ -78,6 +78,8 @@
 				margin-right: 10%;
 				width: 8px;
 				height: 21px;
+				min-width: 8px;
+				min-height: 21px;
 
 				img {
 					height: 100%;
@@ -94,7 +96,7 @@
 			max-height: 0;
 			width: 100%;
 			overflow: hidden;
-			padding-top: 30px;
+			padding-top: 7vh;
 			transition: max-height 0.4s linear;
 		}
 
@@ -157,7 +159,7 @@
 	}
 
 	.chooseBuilding {
-		bottom: 22%;
+		bottom: 19%;
 		z-index: 999;
 
 		.content.active {
@@ -187,13 +189,12 @@
 			letter-spacing: 0.08px;
 			line-height: 12px;
 			text-decoration: none;
-			margin: 0 2% 2.2vh 2%;
-
+			margin: 0 2% 2.2vh;
 
 			img {
-        width: 51px;
-        height: 39px;
-      }
+				width: 51px;
+				height: 39px;
+			}
 		}
 	}
 }
