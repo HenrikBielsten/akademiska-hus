@@ -93,6 +93,8 @@ function fetchReport() {
     document.getElementById("phone").innerHTML = lastItem['phone'];
     document.getElementById("message").innerHTML = lastItem['message'];
 
+    $('.reportImg').attr('src', './Ahuslaravelapp' + lastItem['image_1']);
+
     return fetch('http://localhost:8888/api/buildings').then(function (response) {
       return response.json();
     }).then(function (data) {
