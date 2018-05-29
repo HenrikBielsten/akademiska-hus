@@ -1,6 +1,9 @@
 var latitude = "";
 var longitude = "";
 
+var continueButton = document.querySelector(".continueButton");
+var continueIcon = document.querySelector(".continueIcon");
+
 const output = document.getElementById("out");
 const button = document.querySelector('.fileSelect');
 
@@ -12,6 +15,11 @@ function success(position) {
   localStorage.setItem('latitude', latitude)
 
   console.log(latitude + ', ' + longitude);
+
+  if (localStorage.images) {
+    continueButton.style.pointerEvents = 'all';
+    continueIcon.style.opacity = '1';
+  }
 }
 
 function error() {
@@ -27,11 +35,6 @@ function error() {
 }
 
 button.addEventListener('click', function () {
-
-  if (!navigator.geolocation){
-    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-    return;
-  }
 
   navigator.geolocation.getCurrentPosition(success, error);
 });
