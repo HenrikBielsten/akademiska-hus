@@ -17,7 +17,7 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 // Displays a message if you choose too many files
 function tooMany() {
-  $(tooManyContainer).animate({top: '-6vh'}, 'fast');
+  $(tooManyContainer).animate({top: '-2vh'}, 'fast');
 };
 
 // Animates the message out of view agian on next page interaction
@@ -99,8 +99,6 @@ function handleFiles(evt) {
             localStorage.setItem('images', JSON.stringify(filesArray));
 
             if (filesArray.length >= 1) {
-              continueButton.style.pointerEvents = 'all';
-              continueIcon.style.opacity = '1';
             }
 
             if (filesArray.length >= 4) {
@@ -151,7 +149,7 @@ if (localStorage.images) {
     $(".single-item").append(imgDiv);
     $(".single-item").show();
 
-    if (filesArray.length >= 1) {
+    if (filesArray.length >= 1 && localStorage.latitude) {
       continueButton.style.pointerEvents = 'all';
       continueIcon.style.opacity = '1';
     }
