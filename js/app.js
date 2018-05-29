@@ -342,6 +342,9 @@ infoArrow.addEventListener("click", function (e) {
 var latitude = "";
 var longitude = "";
 
+var continueButton = document.querySelector(".continueButton");
+var continueIcon = document.querySelector(".continueIcon");
+
 var output = document.getElementById("out");
 var button = document.querySelector('.fileSelect');
 
@@ -353,6 +356,11 @@ function success(position) {
   localStorage.setItem('latitude', latitude);
 
   console.log(latitude + ', ' + longitude);
+
+  if (localStorage.images) {
+    continueButton.style.pointerEvents = 'all';
+    continueIcon.style.opacity = '1';
+  }
 }
 
 function error() {
@@ -366,11 +374,6 @@ function error() {
 }
 
 button.addEventListener('click', function () {
-
-  if (!navigator.geolocation) {
-    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-    return;
-  }
 
   navigator.geolocation.getCurrentPosition(success, error);
 });
@@ -484,10 +487,7 @@ function handleFiles(evt) {
             // Takes the filesArray and creates a string of it. Then saves the string in localStorage.
             localStorage.setItem('images', JSON.stringify(filesArray));
 
-            if (filesArray.length >= 1) {
-              continueButton.style.pointerEvents = 'all';
-              continueIcon.style.opacity = '1';
-            }
+            if (filesArray.length >= 1) {}
 
             if (filesArray.length >= 4) {
               fileSelect.style.pointerEvents = "none";
@@ -533,7 +533,7 @@ if (localStorage.images) {
     $(".single-item").append(imgDiv);
     $(".single-item").show();
 
-    if (filesArray.length >= 1) {
+    if (filesArray.length >= 1 && localStorage.latitude) {
       continueButton.style.pointerEvents = 'all';
       continueIcon.style.opacity = '1';
     }
