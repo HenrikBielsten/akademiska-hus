@@ -17,6 +17,7 @@ document.getElementById("email").innerHTML = lastItem['email'];
 document.getElementById("phone").innerHTML = lastItem['phone'];
 document.getElementById("message").innerHTML = lastItem['message'];
 
+$('.reportImg').attr('src', './Ahuslaravelapp' + lastItem['image_1']);
 
 return fetch('http://localhost:8888/api/buildings')
 .then(response => response.json())
@@ -30,6 +31,7 @@ let returnedBuilding = data.data.find(x => x.id === buildingId);
 
 document.getElementById("address").innerHTML = returnedBuilding['building_address'];
 document.getElementById("building").innerHTML = returnedBuilding['building_name'];
+
 
 
 })

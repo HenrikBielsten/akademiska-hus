@@ -35,6 +35,47 @@ class ProblemReportsController extends Controller
         $problemReport = $request->IsMethod('put') ? ProblemReport::findOrFail
         ($request->report_id) : new ProblemReport;
 
+        if (!empty($request->input('image_1'))) {
+            $data = $request->input('image_1');
+
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $data = base64_decode($data);
+
+            file_put_contents('../uploads/image1-'. $request->input('user_id') .'.png', $data);
+            $problemReport->image_1 = '/uploads/image1-'. $request->input('user_id') .'.png';
+        }
+        if (!empty($request->input('image_2'))) {
+            $data = $request->input('image_2');
+
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $data = base64_decode($data);
+
+            file_put_contents('../uploads/image2-'. $request->input('user_id') .'.png', $data);
+            $problemReport->image_2 = '/uploads/image2-'. $request->input('user_id') .'.png';
+        }
+        if (!empty($request->input('image_3'))) {
+            $data = $request->input('image_3');
+
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $data = base64_decode($data);
+
+            file_put_contents('../uploads/image3-'. $request->input('user_id') .'.png', $data);
+            $problemReport->image_3 = '/uploads/image3-'. $request->input('user_id') .'.png';
+        }
+        if (!empty($request->input('image_4'))) {
+            $data = $request->input('image_4');
+
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $data = base64_decode($data);
+
+            file_put_contents('../uploads/image4-'. $request->input('user_id') .'.png', $data);
+            $problemReport->image_4 = '/uploads/image4-'. $request->input('user_id') .'.png';
+        }
+
         $problemReport->report_id = $request->input('report_id');
         $problemReport->user_id = $request->input('user_id');
         $problemReport->building_id = $request->input('building_id');
@@ -44,11 +85,17 @@ class ProblemReportsController extends Controller
         $problemReport->email = $request->input('email');
         $problemReport->geolocation = $request->input('geolocation');
         $problemReport->message = $request->input('message');
-        $problemReport->image_1 = $request->input('image_1');
-        $problemReport->image_2 = $request->input('image_2');
-        $problemReport->image_3 = $request->input('image_3');
-        $problemReport->image_4 = $request->input('image_4');
+        // $problemReport->image_1 = $request->input('image_1');
+        // $problemReport->image_2 = $request->input('image_2');
+        // $problemReport->image_3 = $request->input('image_3');
+        // $problemReport->image_4 = $request->input('image_4');
         $problemReport->created_at = $request->input('created_at');
+
+
+
+
+
+
 
 
         if ($problemReport->save()) {

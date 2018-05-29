@@ -15,6 +15,8 @@ return fetch('http://localhost:8888/api/buildings')
   $.each( dataBuildings.data, function( index2, buildingValue ){
       if (value.user_id == 1 && buildingValue.id == value.building_id) {
 
+
+
         var html = '<div class="box">' +
                       '<div class="boxWrapper">' +
                         '<div class="topSection">' +
@@ -26,6 +28,7 @@ return fetch('http://localhost:8888/api/buildings')
                             '<p>' + 'Inskickad: ' + value.created_at['date'].split(" ")[0] + '</p>' +
                         '</div>' +
                         '<div class="image">' +
+                        '<img src="./Ahuslaravelapp' + value.image_1 + '" alt="">' +
                         '</div>' +
                       '</div>' +
                       '<textarea>' + value.message +'</textarea>' +
