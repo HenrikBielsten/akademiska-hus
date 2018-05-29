@@ -1,0 +1,8 @@
+<svg width="96" height="24" viewBox="0 0 96 24" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="evenodd">
+    <rect fill="#00A388" width="96" height="24" rx="4"/>
+    <text font-family="ArialMT, Arial" font-size="13" letter-spacing=".65" fill="#FFF">
+      <tspan x="20.14" y="17">AVBRYT</tspan>
+    </text>
+  </g>
+</svg>

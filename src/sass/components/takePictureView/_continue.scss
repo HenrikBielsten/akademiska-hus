@@ -1,0 +1,27 @@
+.continueContainer {
+  width: inherit;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+
+  .continueIcon {
+    height: 4vh;
+    width: 20vh;
+    opacity: 0.5;
+    margin-right: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .continueButton {
+    pointer-events: none;
+    text-decoration: none;
+  }
+
+  img {
+    margin-left: 4vw;
+  }
+}

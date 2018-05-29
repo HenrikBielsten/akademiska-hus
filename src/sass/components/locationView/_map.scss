@@ -1,0 +1,81 @@
+.map {
+	width: inherit;
+	height: 50vh;
+	min-height: 50vh;
+	overflow: hidden !important;
+	position: relative !important;
+}
+
+.popupBuilding,
+.popupCampus {
+	color: #FBFBFB;
+	font-family: Arial;
+	font-size: 18px;
+	letter-spacing: 0.16px;
+	line-height: 21px;
+	margin-left: 5vw;
+}
+
+.popupBuilding {
+	margin-bottom: 5vh;
+}
+
+.popupAdress {
+	color: #FBFBFB;
+	font-family: Arial;
+	font-size: 13px;
+	letter-spacing: 1.38px;
+	line-height: 14px;
+	margin: 2vh 0 0 5vw;
+}
+/* The location pointed to by the popup tip. */
+.popup-tip-anchor {
+	height: 0;
+	position: absolute;
+	/* The max width of the info window. */
+	width: 200px;
+}
+/* The bubble is anchored above the tip. */
+.popup-bubble-anchor {
+	position: absolute;
+	width: 100%;
+	/* TIP_HEIGHT= */
+	bottom: 8px;
+	left: 0;
+}
+/* Draw the tip. */
+.popup-bubble-anchor::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* Center the tip horizontally. */
+	transform: translate(-50%, 0);
+	/* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
+	width: 0;
+	height: 0;
+	/* The tip is 8px high, and 12px wide. */
+	border-left: 5vw solid transparent;
+	border-right: 5vw solid transparent;
+	/* TIP_HEIGHT= */
+	border-top: 4vh solid transparent;
+}
+/* The popup bubble itself. */
+.popup-bubble-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(-51%, -80%);
+	/* Style the info window. */
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	font-family: sans-serif;
+	overflow-y: auto;
+	height: 18vh;
+	width: 83vw;
+	background-image: url("../images/popup_map.svg");
+	background-size: cover;
+}

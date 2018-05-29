@@ -14,6 +14,7 @@ mix.disableSuccessNotifications();
 
  mix.js('src/javascript/app.js', 'js/app.js')
     .js('src/javascript/location/fetchBuilding.js', 'js/')
+    .js('src/javascript/location/cancel.js', 'js/')
     .js('src/javascript/location/locationHandler.js', 'js/')
     .js('src/javascript/error/questionmark.js', 'js/')
     .js('src/javascript/error/error-submit.js', 'js/')
