@@ -153,10 +153,10 @@ function postData(event) {
     return console.log(err);
   });
 
-  //     setTimeout(function() {
-  //   window.location.href = "report-received.html";
-  // }, 1000);
-
+  setTimeout(function () {
+    localStorage.clear();
+    window.location.href = "report-received.html";
+  }, 1000);
 }
 
 /***/ }),
