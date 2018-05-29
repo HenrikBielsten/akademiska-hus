@@ -133,7 +133,13 @@ function success(position) {
 }
 
 function error() {
-  output.innerHTML = "Unable to retrieve your location";
+  $('.locationError').show().css('display', 'flex');
+  $(".locationError").animate({ left: '0vh' });
+
+  $(".locationError .errorBox .close").click(function () {
+    $(".locationError").animate({ left: '-100vw' });
+    $('.locationError').delay(300).hide(0);
+  });
 }
 
 button.addEventListener('click', function () {
