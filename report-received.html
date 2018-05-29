@@ -17,44 +17,66 @@
 <body class="report-received">
   <div class="loading-overlay">
     <div class="loading-bro">
-  <h1>Laddar</h1>
-  <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
-    <circle id="loading-inner" cx="75" cy="75" r="60"/>
- </svg>
-</div>
+      <h1>Laddar</h1>
+      <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
+        <circle id="loading-inner" cx="75" cy="75" r="60"/>
+      </svg>
+    </div>
   </div>
   <div class="container">
-  <h1>Tack!</h1>
-  <h3>Vi har tagit emot din anmälan och återkommer så fort vi kan!</h3>
+    <h1>Tack!</h1>
+    <h3>Vi har tagit emot din anmälan och återkommer så fort vi kan!</h3>
 
-  <div class="box">
-    <img class="xIcon" src="./images/x.svg" alt="">
-    <h4 id="address"></h4>
-    <h3 id="campus">Högskolan i Borås</h3>
-    <h3 id="building">Balder: Del C</h3>
-    <div class="midSection">
-      <div class="text">
-        <p class="number_text">ANMÄLNINGSNUMMER:</p>
-        <h4 class="report_number">123 456 789</h4>
-        <p class="name" id="name"></p>
-        <p id="email"></p>
-        <p id="phone"></p>
+    <div class="box">
+      <h4 id="address"></h4>
+      <h3 id="campus">Högskolan i Borås</h3>
+      <h3 id="building">Balder: Del C</h3>
+      <div class="midSection">
+        <div class="text">
+          <p class="number_text">ANMÄLNINGSNUMMER:</p>
+          <h4 class="report_number">123 456 789</h4>
+          <p class="name" id="name"></p>
+          <p id="email"></p>
+          <p id="phone"></p>
+        </div>
+        <div class="image"><img class="reportImg" src="" alt=""></div>
       </div>
-      <div class="image"><img class="reportImg" src="" alt=""></div>
+      <textarea name="name" id="message"></textarea>
+      <p>Registrera dig som användare och håll koll på och se status på dina felanmälningar.</p>
+      <div class="buttonContainer">
+        <button class="newReportButton" type="button" name="button">Ny anmälan</button>
+      </div>
+
     </div>
-    <textarea name="name" id="message"></textarea>
-<p>Registrera dig som användare och håll koll på och se status på dina felanmälningar.</p>
-<div class="buttonContainer">
-  <button type="button" name="button">Registera dig</button>
-</div>
 
   </div>
-  </div>
+
+  <div class="hamburgerMenu2">
+
+    <img class="hamburgerClose2" src="./images/x.svg" alt="">
+
+    <a href="index.html">
+      <div class="myErrorReports2">
+        Ny felanmälan
+      </div>
+    </a>
+
+    <div class="myAccount2">
+      Mitt konto
+    </div>
+
+    <div class="logOut2">
+      Logga ut
+    </div>
+
+  </div> <!-- End hamburgerMenu -->
+
   <div class="bottomMenu">
     <img src="./images/logo_ahus.svg" alt="">
-    <img class="hamburgerIcon" src="./images/menu_hamburger.svg" alt="">
+    <img class="hamburger2" src="./images/menu_hamburger.svg" alt="">
   </div>
   <script src="./js/loading.js" charset="utf-8"></script>
+  <script src="./js/hamburgerMenu2.js" charset="utf-8"></script>
   <script src="./js/fetchReport.js" charset="utf-8"></script>
 </body>
 </html>

@@ -115,6 +115,9 @@
         width: 100%;
         height: 9%;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         button {
           text-transform: uppercase;
@@ -126,7 +129,6 @@
           text-align: center;
           height: 100%;
           width: 50%;
-          float: right;
         }
       }
     }

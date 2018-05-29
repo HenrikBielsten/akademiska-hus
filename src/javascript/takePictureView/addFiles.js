@@ -17,12 +17,16 @@ var fileSelect = document.querySelector(".fileSelect"),
 
 // Displays a message if you choose too many files
 function tooMany() {
+  tooManyContainer.style.display = 'flex';
   $(tooManyContainer).animate({top: '-2vh'}, 'fast');
 };
 
 // Animates the message out of view agian on next page interaction
 $(window).click(function(e) {
   $(tooManyContainer).animate({top: '-21vh'}, 'fast');
+  setTimeout(function () {
+    tooManyContainer.style.display = 'none';    
+  }, 200);
 });
 
 var filesArray = [];
