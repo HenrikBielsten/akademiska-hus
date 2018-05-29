@@ -1,12 +1,12 @@
 .tooManyContainer {
   width: 100vw;
   height: 56vh;
-  display: flex;
   justify-content: center;
   align-items: flex-start;
   position: absolute;
   top: -21vh;
   z-index: 5000;
+  display: none;
 
   .tooMany {
     height: 20vh;
