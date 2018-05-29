@@ -13,5 +13,5 @@ $(".hamburger2").click(function(){
 $(hamburgerClose2).click(function() {
 
   $(hamburgerMenu2).animate({bottom: '-44vh'});
-  $(hamburgerMenu2).delay(500).hide(0);
+  $(hamburgerMenu2).delay(200).hide(0);
 });

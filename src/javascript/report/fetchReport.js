@@ -41,5 +41,5 @@ function fetchReport() {
 fetchReport();
 
 $(newReportButton).click(function() {
-  window.location.href = 'index.html';
+  window.location.href = 'my-reports.html';
 })

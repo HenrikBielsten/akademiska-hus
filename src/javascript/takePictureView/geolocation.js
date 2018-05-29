@@ -30,11 +30,12 @@ function error() {
     $(".locationError").animate({left: '-100vw'});
     $('.locationError').delay(300).hide(0);
   });
-
-
 }
 
 button.addEventListener('click', function () {
 
-  navigator.geolocation.getCurrentPosition(success, error);
+  if (!localStorage.latitude) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
 });
