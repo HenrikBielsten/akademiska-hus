@@ -41,7 +41,7 @@ Server to run php
 ## Authors
 
 * **Filip Petersson** - *Developer* - [Filpet96](https://github.com/Filpet96)
-* **Henrik Bielsten** - *Developer* - [Filpet96](https://github.com/HenrikBielsten)
+* **Henrik Bielsten** - *Developer* - [HenrikBielsten](https://github.com/HenrikBielsten)
 
 
 
