@@ -31,7 +31,7 @@ Server to run php
 
 ## Built With
 
-* [PHP - Laravel](http://www.dropwizard.io/1.0.2/docs/) 
+* [PHP - Laravel]
 * [HTML]
 * [CSS]
 * [Javascript / Jquery]
