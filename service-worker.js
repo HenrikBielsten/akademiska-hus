@@ -1,39 +1,106 @@
-// 'use strict';
-//
-// // We define a version number to tell the browser which version of application
-// // it is using. Update this key whenever you update your assets such as styles,
-// // scripts and images.
-// const VERSION = 'v1';
-//
-// // This is a list of assets which should work offline. It works both with local
-// // and external assets.
-// const urls = [
-//   '/index.html',
-//   '/assets/styles/yrgo.css',
-//   'https://cloud.githubusercontent.com/assets/499192/26632067/67c88ab2-460e-11e7-86c4-551125f13eee.jpg'
-// ];
-//
-// // First we need to install our service worker with the given version.
-// self.addEventListener('install', event => {
-//   event.waitUntil(caches.open(VERSION).then(cache => cache.addAll(urls)));
-// });
-//
-// // Then we need to active the service worker and/or delete older versions.
-// self.addEventListener('activate', event => {
-//   event.waitUntil(
-//     caches.keys().then(keys => {
-//       return Promise.all(keys
-//         .filter(key => key !== VERSION)
-//         .map(key => caches.delete(key))
-//       );
-//     })
-//   );
-// });
-//
-// // Finally we fetch the assets from the service worker or from the network if
-// // the browser haven't yet fetched the items.
-// self.addEventListener('fetch', event => {
-//   event.respondWith(
-//     caches.match(event.request).then(response => response || fetch(event.request))
-//   );
-// });
+// Set a name for the current cache
+var cacheName = 'v1';
+
+// Default files to always cache
+var cacheFiles = [
+	'./index.html',
+	'./location.html',
+	'./my-reports.html',
+	'./report-recieved.html',
+	'./describe-error.html'
+]
+
+
+self.addEventListener('install', function(e) {
+    console.log('[ServiceWorker] Installed');
+
+    // e.waitUntil Delays the event until the Promise is resolved
+    e.waitUntil(
+
+    	// Open the cache
+	    caches.open(cacheName).then(function(cache) {
+
+	    	// Add all the default files to the cache
+			console.log('[ServiceWorker] Caching cacheFiles');
+			return cache.addAll(cacheFiles);
+	    })
+	); // end e.waitUntil
+});
+
+
+self.addEventListener('activate', function(e) {
+    console.log('[ServiceWorker] Activated');
+
+    e.waitUntil(
+
+    	// Get all the cache keys (cacheName)
+		caches.keys().then(function(cacheNames) {
+			return Promise.all(cacheNames.map(function(thisCacheName) {
+
+				// If a cached item is saved under a previous cacheName
+				if (thisCacheName !== cacheName) {
+
+					// Delete that cached file
+					console.log('[ServiceWorker] Removing Cached Files from Cache - ', thisCacheName);
+					return caches.delete(thisCacheName);
+				}
+			}));
+		})
+	); // end e.waitUntil
+
+});
+
+
+self.addEventListener('fetch', function(e) {
+	console.log('[ServiceWorker] Fetch', e.request.url);
+
+	// e.respondWidth Responds to the fetch event
+	e.respondWith(
+
+		// Check in cache for the request being made
+		caches.match(e.request)
+
+
+			.then(function(response) {
+
+				// If the request is in the cache
+				if ( response ) {
+					console.log("[ServiceWorker] Found in Cache", e.request.url, response);
+					// Return the cached version
+					return response;
+				}
+
+				// If the request is NOT in the cache, fetch and cache
+
+				var requestClone = e.request.clone();
+				fetch(requestClone)
+					.then(function(response) {
+
+						if ( !response ) {
+							console.log("[ServiceWorker] No response from fetch ")
+							return response;
+						}
+
+						var responseClone = response.clone();
+
+						//  Open the cache
+						caches.open(cacheName).then(function(cache) {
+
+							// Put the fetched response in the cache
+							cache.put(e.request, responseClone);
+							console.log('[ServiceWorker] New Data Cached', e.request.url);
+
+							// Return the response
+							return response;
+
+				        }); // end caches.open
+
+					})
+					.catch(function(err) {
+						console.log('[ServiceWorker] Error Fetching & Caching New Data', err);
+					});
+
+
+			}) // end caches.match(e.request)
+	); // end e.respondWith
+});

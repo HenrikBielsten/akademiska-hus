@@ -26,7 +26,7 @@ Server to run php
 5. Rename the .env.example file to .env and edit it to fit your database.
 ```
 
-![Alt text](./demo.png?raw=true "Title")
+![Alt text](./demo.png?raw=true)
 
 ## Running the tests
 
